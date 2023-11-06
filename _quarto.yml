@@ -1,0 +1,28 @@
+project:
+  type: book
+
+book:
+  title: "rsetup"
+  author: "Nicolas Casajus"
+  date: "11/06/2023"
+  chapters:
+    - index.qmd
+    - part: "Installation"
+      chapters:
+        - chapters/windows.qmd
+        - chapters/macos.qmd
+        - chapters/ubuntu.qmd
+        - chapters/arch.qmd
+    - part: "Configuration"
+      chapters:
+        - chapters/rstudio.qmd
+        - chapters/git.qmd
+        - chapters/github-ssh.qmd
+        - chapters/github-token.qmd
+
+format:
+  html:
+    theme: cosmo
+    code-copy: true
+  pdf:
+    documentclass: scrreprt

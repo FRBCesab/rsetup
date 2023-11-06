@@ -1,0 +1,8 @@
+# Introduction {.unnumbered}
+
+
+::: {.callout-note}
+## Tip
+
+Having an up-to-date environment is the first good practice.
+:::
