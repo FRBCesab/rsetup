@@ -1,8 +1,213 @@
 # Windows 10/11 {.unnumbered}
 
-...
+## Prerequisites
+
+The [**Windows Subsystem for Linux (WSL)**](https://learn.microsoft.com/en-us/windows/wsl/about) 
+enables you to access the power of both Windows and Linux at the same time on a 
+Windows machine. WSL lets you install a Linux distribution (such as Ubuntu, 
+OpenSUSE, Kali, Debian, Arch Linux, etc.) and use Linux applications, utilities, 
+and Bash command-line tools directly on Windows, unmodified, without the overhead 
+of a traditional virtual machine or dualboot setup.
+
+::: {.callout-warning}
+## Warning
+
+You must use **Windows 10/11** to run WSL.
+:::
+
+
+This module is required to install [**Docker Desktop**](https://docs.docker.com/desktop/).
+
+To install **WSL**, open PowerShell or Windows Terminal in **Administrator mode** by right-clicking 
+and selecting "Run as administrator", and enter the following command:
+
 
 ```powershell
-# Install Chocolatey Package Manager
+## Install Windows Subsystem for Linux ----
+wsl --install
+```
+
+Restart your machine to complete the installation.
+
+This command enables the features necessary to run WSL and install the 
+**Ubuntu distribution** of Linux.
+After the reboot, a terminal will ask you to pick a **username** and a **password** 
+for Ubuntu.
+
+Finally, just ensure that you use the version 2 of **WSL**.
+Close and reopen PowerShell or Windows Terminal in **Administrator mode** by right-clicking 
+and selecting "Run as administrator", and enter the following command:
+
+```powershell
+## Set WSL default version ----
+wsl --set-default-version 2
+```
+
+
+That's it! You have install Ubuntu as a Windows App.
+
+::: {.callout-note}
+## Update your Linux system regularly
+
+Keep your Ubuntu distribution up-to-date by running:
+
+```sh
+## Update Linux packages ----
+sudo apt update && sudo apt upgrade
+```
+:::
+
+
+
+
+## Installation
+
+| Software        | Description                                    | Website                                                                    |
+| :-------------- | :--------------------------------------------- | :------------------------------------------------------------------------: |
+| R               | The R environment                              | [link](https://cran.r-project.org/)                                        |
+| Rtools          | A toolbox to build R packages from source      | [link](https://cran.r-project.org/bin/windows/Rtools/rtools43/rtools.html) |
+| RStudio Desktop | Integrated development environment (IDE) for R | [link](https://posit.co/download/rstudio-desktop/)                         |
+| Pandoc          | Document converter used by `rmarkdown`         | [link](https://pandoc.org/)                                                |
+| Quarto CLI      | Scientific publishing system built on Pandoc   | [link](https://quarto.org/)                                                |
+| Git             | Version control software                       | [link](https://git-scm.com/)                                               |
+| Docker Desktop  | Containerization software                      | [link](https://docs.docker.com/desktop/)                                   |
+
+
+We are going to install the required software by using 
+[**Chocolatey**](https://chocolatey.org/), a package manager for Windows. 
+A package manager is a way to get software (and software updates) onto your 
+machine without much work on your part. It's the Windows equivalent of `yum`, 
+`pacman` or `apt-get`.
+
+To install **Chocolatey**, open PowerShell or Windows Terminal in 
+**Administrator mode** by right-clicking and selecting "Run as administrator", 
+and enter the following command:
+
+
+```powershell
+## Install Chocolatey Package Manager ----
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 ```
+
+Check your installation by running:
+
+
+```powershell
+## Get Chocolatey version ----
+choco --version
+# Chocolatey v2.2.2
+```
+
+It's time to install the required softwares:
+
+```powershell
+## Install R environment ----
+choco install r r.studio rtools
+
+## Install git ----
+choco install git
+
+## Install literate programing tools ----
+choco install pandoc quarto
+
+## Install Docker ----
+choco install docker-desktop
+```
+
+
+In addition, we need to install the {{< fa brands r-project >}} package 
+[`quarto`](https://quarto-dev.github.io/quarto-r/):
+
+```{r}
+#| echo: true
+#| eval: false
+
+## Install quarto package ----
+install.packages("quarto")
+```
+
+
+Finally, let's install a `LaTeX` distribution to convert documents from `.Rmd` 
+(or `.qmd`) to `.pdf`. 
+We are going to install a lightened distribution w/ the {{< fa brands r-project >}}
+package [`tinytex`](https://yihui.org/tinytex/).
+
+
+```{r}
+#| echo: true
+#| eval: false
+
+## Install tinytex package ----
+install.packages("tinytex")
+
+## Install LaTeX distribution ----
+tinytex::install_tinytex()
+```
+
+
+::: {.callout-important}
+## Important
+
+If you already have a `LaTeX` distribution, do not use `tinytex`.
+:::
+
+
+
+
+
+## Check
+
+{{< fa exclamation-triangle >}} &nbsp; **Restart your machine**.
+
+Open **RStudio** and run:
+
+```{r}
+#| echo: true
+#| eval: false
+
+## Get R version ----
+R.version.string
+# "R version 4.3.2 (2023-10-31)"
+
+## Check if git is installed ----
+Sys.which("git")
+#                               git
+# "C:\\PROGRA~1\\Git\\cmd\\git.exe"
+
+## Check if Rtools is installed ----
+Sys.which("make")
+#                               make 
+# "C:\\rtools43\\usr\\bin\\make.exe"
+
+## Check if Pandoc is installed ----
+Sys.which("pandoc")
+#                                                   pandoc 
+# "C:\\Users\\janedoe\\AppData\\Local\\Pandoc\\pandoc.exe"
+
+## Check if Quarto is installed ----
+Sys.which("Quarto")
+#                                                                  Quarto 
+# "C:\\Users\\janedoe\\AppData\\Local\\Programs\\Quarto\\bin\\quarto.exe"
+
+## Check if LaTeX is installed ----
+Sys.which("pdflatex")
+#                                                                    pdflatex 
+# "C:\\Users\\janedoe\\AppData\\Roaming\\TinyTex\\bin\\windows\\pdflatex.exe" 
+
+## Check if Docker is installed ----
+Sys.which("docker")
+#                                                    docker 
+# "C:\\PROGRA~1\\Docker\\Docker\\RESOUR~1\\bin\\docker.exe" 
+
+## Install package from sources ----
+install.packages("jsonlite", type = "source")
+```
+
+
+::: {.callout-tip}
+## Congratulations
+
+You have installed a working environment for data science w/ {{< fa brands r-project >}} and {{< fa brands docker >}}.
+<br/>
+**Now follow instruction to [configure your system](rstudio.html)**.
+:::
