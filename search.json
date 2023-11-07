@@ -1,0 +1,79 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "rsetup",
+    "section": "",
+    "text": "Introduction\n\n\n\n\n\n\nTip\n\n\n\nHaving an up-to-date environment is the first good practice."
+  },
+  {
+    "objectID": "chapters/windows.html#prerequisites",
+    "href": "chapters/windows.html#prerequisites",
+    "title": "Windows 10/11",
+    "section": "Prerequisites",
+    "text": "Prerequisites\nThe Windows Subsystem for Linux (WSL) enables you to access the power of both Windows and Linux at the same time on a Windows machine. WSL lets you install a Linux distribution (such as Ubuntu, OpenSUSE, Kali, Debian, Arch Linux, etc.) and use Linux applications, utilities, and Bash command-line tools directly on Windows, unmodified, without the overhead of a traditional virtual machine or dualboot setup.\n\n\n\n\n\n\nWarning\n\n\n\nYou must use Windows 10/11 to run WSL.\n\n\nThis module is required to install Docker Desktop.\nTo install WSL, open PowerShell or Windows Terminal in Administrator mode by right-clicking and selecting “Run as administrator”, and enter the following command:\n## Install Windows Subsystem for Linux ----\nwsl --install\nRestart your machine to complete the installation.\nThis command enables the features necessary to run WSL and install the Ubuntu distribution of Linux. After the reboot, a terminal will ask you to pick a username and a password for Ubuntu.\nFinally, just ensure that you use the version 2 of WSL. Close and reopen PowerShell or Windows Terminal in Administrator mode by right-clicking and selecting “Run as administrator”, and enter the following command:\n## Set WSL default version ----\nwsl --set-default-version 2\nThat’s it! You have install Ubuntu as a Windows App.\n\n\n\n\n\n\nUpdate your Linux system regularly\n\n\n\nKeep your Ubuntu distribution up-to-date by running:\n## Update Linux packages ----\nsudo apt update && sudo apt upgrade"
+  },
+  {
+    "objectID": "chapters/windows.html#installation",
+    "href": "chapters/windows.html#installation",
+    "title": "Windows 10/11",
+    "section": "Installation",
+    "text": "Installation\n\n\n\nSoftware\nDescription\nWebsite\n\n\n\n\nR\nThe R environment\nlink\n\n\nRtools\nA toolbox to build R packages from source\nlink\n\n\nRStudio Desktop\nIntegrated development environment (IDE) for R\nlink\n\n\nPandoc\nDocument converter used by rmarkdown\nlink\n\n\nQuarto CLI\nScientific publishing system built on Pandoc\nlink\n\n\nGit\nVersion control software\nlink\n\n\nDocker Desktop\nContainerization software\nlink\n\n\n\nWe are going to install the required software by using Chocolatey, a package manager for Windows. A package manager is a way to get software (and software updates) onto your machine without much work on your part. It’s the Windows equivalent of yum, pacman or apt-get.\nTo install Chocolatey, open PowerShell or Windows Terminal in Administrator mode by right-clicking and selecting “Run as administrator”, and enter the following command:\n## Install Chocolatey Package Manager ----\nSet-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))\nCheck your installation by running:\n## Get Chocolatey version ----\nchoco --version\n# Chocolatey v2.2.2\nIt’s time to install the required softwares:\n## Install R environment ----\nchoco install r r.studio rtools\n\n## Install git ----\nchoco install git\n\n## Install literate programing tools ----\nchoco install pandoc quarto\n\n## Install Docker ----\nchoco install docker-desktop\nIn addition, we need to install the  package quarto:\n\n## Install quarto package ----\ninstall.packages(\"quarto\")\n\nFinally, let’s install a LaTeX distribution to convert documents from .Rmd (or .qmd) to .pdf. We are going to install a lightened distribution w/ the  package tinytex.\n\n## Install tinytex package ----\ninstall.packages(\"tinytex\")\n\n## Install LaTeX distribution ----\ntinytex::install_tinytex()\n\n\n\n\n\n\n\nImportant\n\n\n\nIf you already have a LaTeX distribution, do not use tinytex."
+  },
+  {
+    "objectID": "chapters/windows.html#check",
+    "href": "chapters/windows.html#check",
+    "title": "Windows 10/11",
+    "section": "Check",
+    "text": "Check\n   Restart your machine.\nOpen RStudio and run:\n\n## Get R version ----\nR.version.string\n# \"R version 4.3.2 (2023-10-31)\"\n\n## Check if git is installed ----\nSys.which(\"git\")\n#                               git\n# \"C:\\\\PROGRA~1\\\\Git\\\\cmd\\\\git.exe\"\n\n## Check if Rtools is installed ----\nSys.which(\"make\")\n#                               make \n# \"C:\\\\rtools43\\\\usr\\\\bin\\\\make.exe\"\n\n## Check if Pandoc is installed ----\nSys.which(\"pandoc\")\n#                                                   pandoc \n# \"C:\\\\Users\\\\janedoe\\\\AppData\\\\Local\\\\Pandoc\\\\pandoc.exe\"\n\n## Check if Quarto is installed ----\nSys.which(\"Quarto\")\n#                                                                  Quarto \n# \"C:\\\\Users\\\\janedoe\\\\AppData\\\\Local\\\\Programs\\\\Quarto\\\\bin\\\\quarto.exe\"\n\n## Check if LaTeX is installed ----\nSys.which(\"pdflatex\")\n#                                                                    pdflatex \n# \"C:\\\\Users\\\\janedoe\\\\AppData\\\\Roaming\\\\TinyTex\\\\bin\\\\windows\\\\pdflatex.exe\" \n\n## Check if Docker is installed ----\nSys.which(\"docker\")\n#                                                    docker \n# \"C:\\\\PROGRA~1\\\\Docker\\\\Docker\\\\RESOUR~1\\\\bin\\\\docker.exe\" \n\n## Install package from sources ----\ninstall.packages(\"jsonlite\", type = \"source\")\n\n\n\n\n\n\n\nCongratulations\n\n\n\nYou have installed a working environment for data science w/  and .  Now follow instruction to configure your system."
+  },
+  {
+    "objectID": "chapters/macos.html",
+    "href": "chapters/macos.html",
+    "title": "macOS",
+    "section": "",
+    "text": "…"
+  },
+  {
+    "objectID": "chapters/ubuntu.html",
+    "href": "chapters/ubuntu.html",
+    "title": "Ubuntu/Debian",
+    "section": "",
+    "text": "…"
+  },
+  {
+    "objectID": "chapters/arch.html",
+    "href": "chapters/arch.html",
+    "title": "Arch Linux",
+    "section": "",
+    "text": "…"
+  },
+  {
+    "objectID": "chapters/rstudio.html",
+    "href": "chapters/rstudio.html",
+    "title": "RStudio",
+    "section": "",
+    "text": "…"
+  },
+  {
+    "objectID": "chapters/git.html",
+    "href": "chapters/git.html",
+    "title": "git",
+    "section": "",
+    "text": "…"
+  },
+  {
+    "objectID": "chapters/github-ssh.html",
+    "href": "chapters/github-ssh.html",
+    "title": "GitHub SSH keys",
+    "section": "",
+    "text": "…"
+  },
+  {
+    "objectID": "chapters/github-token.html",
+    "href": "chapters/github-token.html",
+    "title": "GitHub Personal Access Token",
+    "section": "",
+    "text": "…"
+  }
+]
