@@ -181,13 +181,13 @@ Sys.which("make")
 
 ## Check if Pandoc is installed ----
 Sys.which("pandoc")
-#                                                   pandoc 
-# "C:\\Users\\janedoe\\AppData\\Local\\Pandoc\\pandoc.exe"
+#                                    pandoc 
+# "C:\\PROGRA~3\\CHOCOL~1\\bin\\pandoc.exe"
 
 ## Check if Quarto is installed ----
 Sys.which("Quarto")
-#                                                                  Quarto 
-# "C:\\Users\\janedoe\\AppData\\Local\\Programs\\Quarto\\bin\\quarto.exe"
+#                                    Quarto 
+# "C:\\PROGRA~3\\CHOCOL~1\\bin\\Quarto.exe"
 
 ## Check if LaTeX is installed ----
 Sys.which("pdflatex")
@@ -207,7 +207,7 @@ install.packages("jsonlite", type = "source")
 ::: {.callout-tip}
 ## Congratulations
 
-You have installed a working environment for data science w/ {{< fa brands r-project >}} and {{< fa brands docker >}}.
+You've just installed a working environment for data science w/ {{< fa brands r-project >}}, {{< fa brands github >}}, and {{< fa brands docker >}}.
 <br/>
 **Now follow instruction to [configure your system](rstudio.html)**.
 :::
