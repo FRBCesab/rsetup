@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -40,6 +74,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -196,7 +232,52 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>…</p>
+<p>If you want to use the GitHub API, essentially with the <i class="fa-brands fa-r-project" aria-label="r-project"></i> packages <a href="https://usethis.r-lib.org/"><code>usethis</code></a> and <a href="https://cran.r-project.org/package=rcompendium"><code>rcompendium</code></a>, you need to create a <a href="https://docs.github.com/fr/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">GitHub Personal Access Token</a> (PAT).</p>
+<p>Proceed as follow:</p>
+<ol type="1">
+<li>Go to <a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a></li>
+<li>Click on <strong>Generate new token (classic)</strong></li>
+<li>Choose a name for your new token (e.g.&nbsp;your laptop name)</li>
+<li>Select no expiration date</li>
+<li>In the section <em>Select scopes</em>, select at least <strong>repo</strong> and <strong>workflow</strong></li>
+<li>Copy this token</li>
+</ol>
+<p>Then open <strong>RStudio Desktop</strong> and run:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Install usethis package ----</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"usethis"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Open ~/.Renviron file ----</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">edit_r_environ</span>()</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># • Modify '~/.Renviron'</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># • Restart R for changes to take effect</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The last command will open the <code>~/.Renviron</code> file. Add this new line: <code>GITHUB_PAT='ghp_XXX'</code> where <code>ghp_XXX</code> is your token. Do not forget to restart <strong>RStudio Desktop</strong>.</p>
+<p>Finally let’s tell <code>usethis</code> to use the SSH protocol to communicate with GitHub. Open <strong>RStudio</strong> and run:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Open ~/.Rprofile file ----</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">edit_r_profile</span>()</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># • Modify '~/.Rprofile'</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># • Restart R for changes to take effect</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>In the <code>~/.Rprofile</code> file, add this new line: <code>options(usethis.protocol = "ssh")</code>. Do not forget to restart <strong>RStudio Desktop</strong>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+To go further
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><p>The <code>.Renviron</code> file is a good place to store secrets (API tokens, password, etc.). This file is read by <i class="fa-brands fa-r-project" aria-label="r-project"></i> at startup. To access these variables, you can use the function <code>Sys.getenv("GITHUB_PAT")</code>.</p></li>
+<li><p>The <code>.Rprofile</code> file allows you to run <i class="fa-brands fa-r-project" aria-label="r-project"></i> command lines at startup. You can customize the default behaviour of <i class="fa-brands fa-r-project" aria-label="r-project"></i> and define some variables with <code>options()</code>. To access these variables, you can use <code>options()$"usethis.protocol"</code>.</p></li>
+</ul>
+<p>More information <a href="https://cran.r-project.org/web/packages/startup/vignettes/startup-intro.html">here</a>.</p>
+</div>
+</div>
 
 
 
