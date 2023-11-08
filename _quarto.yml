@@ -3,8 +3,25 @@ project:
 
 book:
   title: "Setting up R"
-  author: "Nicolas Casajus"
-  date: "11/08/2023"
+  author: 
+    - name: "Nicolas Casajus"
+      orcid: "0000-0002-5537-5294"
+      url: "https://nicolascasajus.fr"
+      affiliations: 
+        - name: FRB-CESAB
+          url: "https://www.fondationbiodiversite.fr/en/about-the-foundation/le-cesab/"
+  date: today
+  description: |
+    A user guide to setup a working environment for data science with R<hr>
+
+  favicon: images/favicon.png
+  
+  page-footer: 
+    left: "&copy; CC-By [FRB-CESAB](https://www.fondationbiodiversite.fr/en/about-the-foundation/le-cesab/)"
+    center: "Code source available on [{{< fa brands github >}}](https://github.com/frbcesab/rsetup/)"
+    right: "Built with [Quarto](https://quarto.org/)"
+    border: true
+  
   chapters:
     - index.qmd
     - part: "Installation"
@@ -23,3 +40,5 @@ format:
   html:
     theme: cosmo
     code-copy: true
+    code-line-numbers: false
+    # highlight-style: zenburn
