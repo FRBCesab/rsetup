@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -197,7 +231,58 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>…</p>
+<p>To communicate with <a href="https://github.com">GitHub</a>, you can use the protocol HTTPS (default) or the protocol SSH (recommended). The protocol SSH is a more secure method of logging into a remote server (GitHub). To use this protocol, you need to generate an SSH keys pair that consists in creating two long strings of characters: a <strong>public key</strong> and a <strong>private key</strong>. You can place the public key on any server (for instance GitHub), and then connect to the server using a device (your laptop) that has access to the private key.</p>
+<p>To generate a new SSH keys pair proceed as follow:</p>
+<ol start="0" type="1">
+<li>Create an account on <strong>GitHub</strong> at <a href="https://github.com/signup">https://github.com/signup</a></li>
+<li>Open <strong>RStudio</strong> and click on: <strong><code>Tools &gt; Global options &gt; Git/SVN</code></strong></li>
+<li>Click on <strong>Create SSH Key</strong>, select <strong>ED25519</strong> and then click on <strong>Create</strong> (you can omit the passphrase). This new SSH keys pair has been stored in <code>~/.ssh/</code>.</li>
+<li>Click on <strong>View public key</strong> and copy it</li>
+<li>Go to the page <a href="https://github.com/settings/keys">https://github.com/settings/keys</a> and click on <strong>New SSH key</strong></li>
+<li>Choose a name for your key (e.g.&nbsp;your laptop name) and paste your public key.</li>
+<li>Finally click on <strong>Add SSH key</strong></li>
+</ol>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+For Ubuntu users
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you are on <strong>Ubuntu</strong> you might need to install <code>ssh-askpass</code>:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install ssh-askpass</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>Let’s test the SSH connection with GitHub. Open a terminal and run:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-T</span> git@github.com</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>When you first connect to GitHub (and to any remote server), you will be asked if you trust this server:</p>
+<pre><code>The authenticity of host '[92.168.45.3]:22' can't be established.
+ED25519 key fingerprint is ...
+Are you sure you want to continue connecting (yes/no/[fingerprint])?</code></pre>
+<p>Just write <code>yes</code> and press <code>Enter</code>. This will add a line in the file <code>~/.ssh/known_hosts</code> that lists all your trusted servers.</p>
+<p>Congrats! You can now communicate with GitHub using the SSH protocol.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>From now, you need to use the SSH URL when connecting to a GitHub repo.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># SSH URL (use this one) ----</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">git@github.com:github_account/github_repo.git</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># HTTPS URL ----</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ex">https://github.com/github_account/github_repo.git</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p><strong>N.B.</strong> If you lose your private SSH key you won’t be able to establish a connection with GitHub. You’ll need to delete your SSH key on GitHub and to create a new one.</p>
 
 
 
