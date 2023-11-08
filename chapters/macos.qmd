@@ -1,3 +1,188 @@
 # macOS {.unnumbered}
 
-...
+
+## Installation
+
+| Software        | Description                                    | Website                                                                    |
+| :-------------- | :--------------------------------------------- | :------------------------------------------------------------------------: |
+| R               | The R environment                              | [link](https://cran.r-project.org/)                                        |
+| XQuartz         | Graphical window system                        | [link](https://www.xquartz.org/)                                           |
+| RStudio Desktop | Integrated development environment (IDE) for R | [link](https://posit.co/download/rstudio-desktop/)                         |
+| Pandoc          | Document converter used by `rmarkdown`         | [link](https://pandoc.org/)                                                |
+| Quarto CLI      | Scientific publishing system built on Pandoc   | [link](https://quarto.org/)                                                |
+| Git             | Version control software                       | [link](https://git-scm.com/)                                               |
+| Docker Desktop  | Containerization software                      | [link](https://docs.docker.com/desktop/)                                   |
+
+
+We are going to install the required software by using 
+[**Homebrew**](https://brew.sh), a package manager for macOS. 
+A package manager is a way to get software (and software updates) onto your 
+machine without much work on your part. It's the macOS equivalent of `yum`, 
+`pacman` or `apt-get`.
+
+Before installing **Homebrew**, we need to install the Apple software
+**Xcode Command Line Tools**. It is a self-contained package for software developers 
+who wish to build Mac apps using UNIX-style commands.
+
+Open a [Terminal](https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac), 
+run this line and accept the license:
+
+```sh
+## Install Xcode Command Line Tools ----
+sudo xcode-select --install
+```
+
+We can now install **Homebrew** itself by running:
+
+```sh
+## Install Homebrew ----
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+## Check installation ----
+brew --version
+# Homebrew 4.1.19
+
+## Update repositories (list of available software) ----
+brew update
+```
+
+It's time to install the required softwares:
+
+```sh
+## Install utilities for R ----
+brew install --cask xquartz     ## Graphical window system
+brew install gfortran           ## FORTRAN compiler for GCC
+
+## Install R ----
+brew install --cask r
+
+## Install RStudio Desktop ----
+brew install --cask rstudio
+
+## Install git ----
+brew install git
+
+## Install pandoc ----
+brew install pandoc
+
+## Install Quarto ----
+brew install --cask quarto
+
+## Install Docker ----
+brew install docker
+```
+
+
+In addition, we need to install the {{< fa brands r-project >}} package 
+[`quarto`](https://quarto-dev.github.io/quarto-r/):
+
+```{r}
+#| echo: true
+#| eval: false
+
+## Install quarto package ----
+install.packages("quarto")
+```
+
+
+Finally, let's install a `LaTeX` distribution to convert documents from `.Rmd` 
+(or `.qmd`) to `.pdf`. 
+We are going to install a lightened distribution w/ the {{< fa brands r-project >}}
+package [`tinytex`](https://yihui.org/tinytex/).
+
+
+```{r}
+#| echo: true
+#| eval: false
+
+## Install tinytex package ----
+install.packages("tinytex")
+
+## Install LaTeX distribution ----
+tinytex::install_tinytex()
+```
+
+
+::: {.callout-important}
+## Important
+
+If you already have a `LaTeX` distribution, do not use `tinytex`.
+:::
+
+
+
+
+
+## Check
+
+{{< fa exclamation-triangle >}} &nbsp; **Restart your machine**.
+
+Open **RStudio** and run:
+
+```{r}
+#| echo: true
+#| eval: false
+
+## Get R version ----
+R.version.string
+# "R version 4.3.2 (2023-10-31)"
+
+## Check if git is installed ----
+Sys.which("git")
+#            git
+# "/usr/bin/git"
+
+## Check if Rtools is installed ----
+Sys.which("make")
+#            make 
+# "/usr/bin/make"
+
+## Check if Pandoc is installed ----
+Sys.which("pandoc")
+#                  pandoc 
+# "/usr/local/bin/pandoc"
+
+## Check if Quarto is installed ----
+Sys.which("Quarto")
+#                  Quarto 
+# "/usr/local/bin/Quarto"
+
+## Check if LaTeX is installed ----
+Sys.which("pdflatex")
+#                  pdflatex 
+# "/usr/local/bin/pdflatex" 
+
+## Check if Docker is installed ----
+Sys.which("docker")
+#                  docker 
+# "/usr/local/bin/docker" 
+
+## Install package from sources ----
+install.packages("jsonlite", type = "source")
+```
+
+
+
+
+::: {.callout-note}
+## Update your system regularly
+
+Keep your macOS Apps up-to-date by running:
+
+```sh
+## Check for updates ----
+brew update
+
+## Update macOS Apps ----
+brew upgrade --greedy
+```
+:::
+
+
+
+## Configuration
+
+You've just installed a working environment for data science w/ 
+{{< fa brands r-project >}}, {{< fa brands github >}}, and {{< fa brands docker >}}.
+<br/>
+**Now follow instruction to [configure your system](rstudio.html)**.
