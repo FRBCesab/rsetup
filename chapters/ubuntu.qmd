@@ -1,3 +1,244 @@
 # Ubuntu/Debian {.unnumbered}
 
-...
+## Installation
+
+| Software        | Description                                    | Website                                                                    |
+| :-------------- | :--------------------------------------------- | :------------------------------------------------------------------------: |
+| R               | The R environment                              | [link](https://cran.r-project.org/)                                        |
+| RStudio Desktop | Integrated development environment (IDE) for R | [link](https://posit.co/download/rstudio-desktop/)                         |
+| Pandoc          | Document converter used by `rmarkdown`         | [link](https://pandoc.org/)                                                |
+| Quarto CLI      | Scientific publishing system built on Pandoc   | [link](https://quarto.org/)                                                |
+| Git             | Version control software                       | [link](https://git-scm.com/)                                               |
+| Docker          | Containerization software                      | [link](https://docs.docker.com/desktop/)                                   |
+
+
+We are going to install the required software by using 
+[**APT**](https://en.wikipedia.org/wiki/APT_(software)), a package manager for 
+Debian derived Linux distributions. A package manager is a way to get software 
+(and software updates) onto your machine without much work on your part.
+
+First check your **version of Ubuntu** in a terminal:
+
+
+```sh
+## Check Ubuntu version ----
+cat /etc/issue
+# Ubuntu 22.04 LTS
+```
+
+
+| Release   | Release name    | Repository URL                                               |
+|:---------:|:----------------|:-------------------------------------------------------------|
+| 22.04 LTS | Jammy Jellyfish | https://cloud.r-project.org/bin/linux/ubuntu jammy-cran40/   |
+| 20.04 LTS | Focal Fossa     | https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/   |
+| 18.04 LTS | Bionic Beaver   | https://cloud.r-project.org/bin/linux/ubuntu bionic-cran40/  |
+: Table 1. List of CRAN repositories for different versions of Ubuntu
+
+
+Let's install {{< fa brands r-project >}} by following these steps 
+(change the URL below by the one specific to your version of Ubuntu, cf. Table 1) :
+
+```sh
+## Install APT utilities ----
+sudo apt install build-essential software-properties-common wget
+
+## Add CRAN GPG key ----
+wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
+
+## Add CRAN repository to APT repositories list ----
+sudo add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu jammy-cran40/'
+
+## Update packages list ----
+sudo apt update
+
+## Install R ----
+sudo apt install r-base r-base-dev
+```
+
+
+To install **RStudio Desktop**, follow these steps 
+(uncomment the appropriate line matching your Ubuntu version:
+
+
+```sh
+## Download RStudio Desktop installer (Ubuntu = 22.04) ----
+# wget https://download1.rstudio.org/electron/jammy/amd64/rstudio-2023.09.1-494-amd64.deb
+
+## Download RStudio Desktop installer (Ubuntu = 20.04) ----
+# wget https://download1.rstudio.org/electron/focal/amd64/rstudio-2023.09.1-494-amd64.deb
+
+## Install RStudio Desktop ----
+sudo dpkg -i rstudio-2023.09.1-494-amd64.deb
+
+## Remove installer ----
+rm rstudio-2023.09.1-494-amd64.deb
+```
+
+Now let's install **git**:
+
+```sh
+## Install git -----
+sudo apt install git
+```
+
+And **Pandoc** (to convert documents with `rmarkdown`):
+
+```sh
+## Install pandoc -----
+sudo apt install pandoc
+```
+
+
+Let's install the **Quarto** software, a multi-language, 
+next-generation version of R Markdown developed by Posit (formerly RStudio Inc.), that 
+includes dozens of new features and capabilities.
+
+
+```sh
+## Download Quarto installer ----
+wget https://github.com/quarto-dev/quarto-cli/releases/download/v1.3.450/quarto-1.3.450-linux-amd64.deb
+
+## Install Quarto ----
+sudo dpkg -i quarto-1.3.450-linux-amd64.deb
+
+## Remove installer ----
+rm quarto-1.3.450-linux-amd64.deb
+```
+
+Finally, let's install **Docker Desktop**:
+
+```sh
+## Add Docker's official GPG key ----
+sudo apt install ca-certificates curl gnupg
+sudo install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+sudo chmod a+r /etc/apt/keyrings/docker.gpg
+
+## Add the repository to Apt sources ----
+echo \
+  "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  
+sudo apt update
+
+## Install Docker ----
+sudo apt install docker-ce
+
+## Allow user to use Docker without sudo ----
+sudo usermod -aG docker ${USER}
+```
+
+In addition, we need to install the {{< fa brands r-project >}} package 
+[`quarto`](https://quarto-dev.github.io/quarto-r/):
+
+```{r}
+#| echo: true
+#| eval: false
+
+## Install quarto package ----
+install.packages("quarto")
+```
+
+
+Finally, let's install a `LaTeX` distribution to convert documents from `.Rmd` 
+(or `.qmd`) to `.pdf`. 
+We are going to install a lightened distribution w/ the {{< fa brands r-project >}}
+package [`tinytex`](https://yihui.org/tinytex/).
+
+
+```{r}
+#| echo: true
+#| eval: false
+
+## Install tinytex package ----
+install.packages("tinytex")
+
+## Install LaTeX distribution ----
+tinytex::install_tinytex()
+```
+
+
+::: {.callout-important}
+## Important
+
+If you already have a `LaTeX` distribution, do not use `tinytex`.
+:::
+
+
+
+
+
+## Check
+
+{{< fa exclamation-triangle >}} &nbsp; **Restart your machine**.
+
+Open **RStudio** and run:
+
+```{r}
+#| echo: true
+#| eval: false
+
+## Get R version ----
+R.version.string
+# "R version 4.3.2 (2023-10-31)"
+
+## Check if git is installed ----
+Sys.which("git")
+#            git
+# "/usr/bin/git"
+
+## Check if make is installed ----
+Sys.which("make")
+#            make 
+# "/usr/bin/make"
+
+## Check if Pandoc is installed ----
+Sys.which("pandoc")
+#            pandoc 
+# "/usr/bin/pandoc"
+
+## Check if Quarto is installed ----
+Sys.which("Quarto")
+#            Quarto 
+# "/usr/bin/Quarto"
+
+## Check if LaTeX is installed ----
+Sys.which("pdflatex")
+#            pdflatex 
+# "/usr/bin/pdflatex" 
+
+## Check if Docker is installed ----
+Sys.which("docker")
+#            docker 
+# "/usr/bin/docker" 
+
+## Install package from sources ----
+install.packages("jsonlite", type = "source")
+```
+
+
+
+
+::: {.callout-note}
+## Update your system regularly
+
+Keep your Linux packages up-to-date by running:
+
+```sh
+## Check for updates ----
+sudo apt update
+
+## Update Linux Apps ----
+sudo apt upgrade
+```
+:::
+
+
+
+## Configuration
+
+You've just installed a working environment for data science w/ 
+{{< fa brands r-project >}}, {{< fa brands github >}}, and {{< fa brands docker >}}.
+<br/>
+**Now follow instruction to [configure your system](rstudio.html)**.

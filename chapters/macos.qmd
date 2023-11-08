@@ -132,7 +132,7 @@ Sys.which("git")
 #            git
 # "/usr/bin/git"
 
-## Check if Rtools is installed ----
+## Check if make is installed ----
 Sys.which("make")
 #            make 
 # "/usr/bin/make"
