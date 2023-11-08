@@ -77,13 +77,6 @@
     "text": "Configuration\nYou’ve just installed a working environment for data science w/ , , and .  Now follow instruction to configure your system."
   },
   {
-    "objectID": "chapters/arch.html",
-    "href": "chapters/arch.html",
-    "title": "Arch Linux",
-    "section": "",
-    "text": "…"
-  },
-  {
     "objectID": "chapters/rstudio.html",
     "href": "chapters/rstudio.html",
     "title": "RStudio",
