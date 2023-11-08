@@ -1,3 +1,69 @@
 # GitHub Personal Access Token {.unnumbered}
 
-...
+If you want to use the GitHub API, essentially with the 
+{{< fa brands r-project >}} packages
+[`usethis`](https://usethis.r-lib.org/) and 
+[`rcompendium`](https://cran.r-project.org/package=rcompendium),
+you need to create a 
+[GitHub Personal Access Token](https://docs.github.com/fr/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) (PAT).
+
+Proceed as follow:
+
+1. Go to [https://github.com/settings/tokens](https://github.com/settings/tokens)
+2. Click on **Generate new token (classic)**
+3. Choose a name for your new token (e.g. your laptop name)
+4. Select no expiration date
+5. In the section _Select scopes_, select at least **repo** and **workflow**
+6. Copy this token
+
+Then open **RStudio Desktop** and run: 
+
+```{r}
+#| echo: true
+#| eval: false
+
+## Install usethis package ----
+install.packages("usethis")
+
+## Open ~/.Renviron file ----
+usethis::edit_r_environ()
+# • Modify '~/.Renviron'
+# • Restart R for changes to take effect
+```
+
+The last command will open the `~/.Renviron` file. Add this new line: 
+`GITHUB_PAT='ghp_XXX'` where `ghp_XXX` is your token.
+Do not forget to restart **RStudio Desktop**.
+
+
+
+Finally let's tell `usethis` to use the SSH protocol to communicate with GitHub. 
+Open **RStudio** and run:
+
+```{r}
+#| echo: true
+#| eval: false
+
+## Open ~/.Rprofile file ----
+usethis::edit_r_profile()
+# • Modify '~/.Rprofile'
+# • Restart R for changes to take effect
+```
+
+In the `~/.Rprofile` file, add this new line: `options(usethis.protocol = "ssh")`.
+Do not forget to restart **RStudio Desktop**.
+
+::: {.callout-note}
+## To go further
+
+- The `.Renviron` file is a good place to store secrets (API tokens, password, etc.).
+This file is read by {{< fa brands r-project >}} at startup. To access these variables,
+you can use the function `Sys.getenv("GITHUB_PAT")`.
+
+- The `.Rprofile` file allows you to run {{< fa brands r-project >}} command lines 
+at startup. You can customize the default behaviour of {{< fa brands r-project >}}
+and define some variables with `options()`. To access these variables,
+you can use `options()$"usethis.protocol"`.
+
+More information [here](https://cran.r-project.org/web/packages/startup/vignettes/startup-intro.html).
+:::
