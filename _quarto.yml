@@ -11,8 +11,7 @@ book:
         - name: FRB-CESAB
           url: "https://www.fondationbiodiversite.fr/en/about-the-foundation/le-cesab/"
   date: today
-  description: |
-    A user guide to setup a working environment for data science with R<hr>
+  description: A user guide to setup a working environment for data science with R<hr>
 
   favicon: images/favicon.png
   
