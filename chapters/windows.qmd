@@ -204,10 +204,25 @@ install.packages("jsonlite", type = "source")
 ```
 
 
-::: {.callout-tip}
-## Congratulations
+::: {.callout-note}
+## Update your system regularly
 
-You've just installed a working environment for data science w/ {{< fa brands r-project >}}, {{< fa brands github >}}, and {{< fa brands docker >}}.
+Keep your Windows Apps up-to-date by running:
+
+```powershell
+## Check for updates ----
+choco outdated
+
+## Update Windows Apps ----
+choco upgrade all
+```
+:::
+
+
+
+## Configuration
+
+You've just installed a working environment for data science w/ 
+{{< fa brands r-project >}}, {{< fa brands github >}}, and {{< fa brands docker >}}.
 <br/>
 **Now follow instruction to [configure your system](rstudio.html)**.
-:::
