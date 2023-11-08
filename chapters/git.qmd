@@ -1,3 +1,40 @@
 # git {.unnumbered}
 
-...
+To use **git** to version your projects, you need to locally store your credentials 
+(username and email) that will be added to all your commits.
+
+Open a terminal (you can use the terminal of **RStudio Desktop**) and run:
+
+```sh
+## Tell git your user name ----
+git config --global user.name  "Jane Doe"
+
+## Tell git your email address ----
+git config --global user.email "jane.doe@mail.com"
+```
+
+When you create a new git project, the default branch will be named _master_. 
+It's recommended to replace _master_ by _main_ (for more information read this
+[article](https://www.zdnet.com/article/github-to-replace-master-with-alternative-term-to-avoid-slavery-references/)).
+
+On a terminal, run:
+
+```sh
+## Rename default git branch ----
+git config --global init.defaultBranch main
+```
+
+From now when you will initialize `git` in a new project, the default branch 
+will be **main**.
+
+Check your `git` configuration:
+
+```sh
+## Print the content of git config file ----
+cat ~/.gitconfig
+# [user]
+#         name  = Jane Doe
+#         email = jane.doe@mail.com
+# [init]
+#         defaultBranch = main
+```
