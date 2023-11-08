@@ -4,7 +4,7 @@ project:
 book:
   title: "rsetup"
   author: "Nicolas Casajus"
-  date: "11/07/2023"
+  date: "11/08/2023"
   chapters:
     - index.qmd
     - part: "Installation"
@@ -12,7 +12,6 @@ book:
         - chapters/windows.qmd
         - chapters/macos.qmd
         - chapters/ubuntu.qmd
-        - chapters/arch.qmd
     - part: "Configuration"
       chapters:
         - chapters/rstudio.qmd
