@@ -57,7 +57,7 @@ sudo apt install r-base r-base-dev
 
 
 To install **RStudio Desktop**, follow these steps 
-(uncomment the appropriate line matching your Ubuntu version:
+(uncomment the appropriate line matching your Ubuntu version):
 
 
 ```sh

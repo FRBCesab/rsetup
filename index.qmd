@@ -1,8 +1,34 @@
-# Introduction {.unnumbered}
+---
+toc: false
+---
+
+# Welcome {.unnumbered}
+
+
+Welcome to this guide that will help you to correctly install and configure a 
+working environment for data science with 
+{{< fa brands r-project >}}, {{< fa brands github >}}, and {{< fa brands docker >}}.
+
+To install softwares, please visit the page corresponding to your operating system:
+
+- [Windows](chapters/windows.html)&nbsp; {{< fa brands windows >}}
+- [macOS](chapters/macos.html)&nbsp; {{< fa brands apple >}}
+- [Ubuntu](chapters/ubuntu.html)&nbsp; {{< fa brands ubuntu >}}
 
 
 ::: {.callout-note}
 ## Tip
 
-Having an up-to-date environment is the first good practice.
+Having an up-to-date environment is the first good practice. Do not forget to
+**update your operating system**!
 :::
+
+
+Once you've installed all the required softwares, please make sure to configure:
+
+- [RStudio](chapters/rstudio.html)
+- [git](chapters/git.html)
+- [GitHub SSH keys](chapters/github-ssh.html)
+- [GitHub Personal Access Token](chapters/github-token.html)
+
+

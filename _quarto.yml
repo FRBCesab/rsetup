@@ -2,7 +2,7 @@ project:
   type: book
 
 book:
-  title: "rsetup"
+  title: "Setting up R"
   author: "Nicolas Casajus"
   date: "11/08/2023"
   chapters:
