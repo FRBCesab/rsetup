@@ -81,14 +81,14 @@
     "href": "chapters/rstudio.html",
     "title": "RStudio",
     "section": "",
-    "text": "…"
+    "text": "This page presents the minimal configuration of RStudio Desktop for a better reproducibility.\nGo to Tools &gt; Global Options &gt; General and:\n\nuncheck Restore .RData into workspace at startup\nselect Never save workspace to .RData on exit\nuncheck Always save history (even when not saving .RData)\n\n\n\n\nFigure 1: Configuration of RStudio IDE\n\n\n\n\n\n\n\n\nTips for better reproducibility\n\n\n\n\nNever save your workspace as .RData: decide what you want to save and use save(), saveRDS(), write.csv(), etc.\nNever save your command history: write your code in  scripts, not in the console\n\n\n\nNow follow instruction to configure git."
   },
   {
     "objectID": "chapters/git.html",
     "href": "chapters/git.html",
     "title": "git",
     "section": "",
-    "text": "…"
+    "text": "To use git to version your projects, you need to locally store your credentials (username and email) that will be added to all your commits.\nOpen a terminal (you can use the terminal of RStudio Desktop) and run:\n## Tell git your user name ----\ngit config --global user.name  \"Jane Doe\"\n\n## Tell git your email address ----\ngit config --global user.email \"jane.doe@mail.com\"\nWhen you create a new git project, the default branch will be named master. It’s recommended to replace master by main (for more information read this article).\nOn a terminal, run:\n## Rename default git branch ----\ngit config --global init.defaultBranch main\nFrom now when you will initialize git in a new project, the default branch will be main.\nCheck your git configuration:\n## Print the content of git config file ----\ncat ~/.gitconfig\n# [user]\n#         name  = Jane Doe\n#         email = jane.doe@mail.com\n# [init]\n#         defaultBranch = main\nNow follow instruction to configure GitHub SSH."
   },
   {
     "objectID": "chapters/github-ssh.html",

@@ -41,6 +41,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -197,7 +199,36 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>…</p>
+<p>This page presents the minimal configuration of <strong>RStudio Desktop</strong> for a better reproducibility.</p>
+<p>Go to <strong><code>Tools &gt; Global Options &gt; General</code></strong> and:</p>
+<ul>
+<li>uncheck <strong><em>Restore .RData into workspace at startup</em></strong></li>
+<li>select <strong><em>Never save workspace to .RData on exit</em></strong></li>
+<li>uncheck <strong><em>Always save history (even when not saving .RData)</em></strong></li>
+</ul>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="../images/rstudio-ideconfig.png" class="img-fluid figure-img" style="width:75.0%"></p>
+<figcaption class="figure-caption">Figure 1: Configuration of RStudio IDE</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tips for better reproducibility
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Never save your workspace as <code>.RData</code>: decide what you want to save and use <code>save()</code>, <code>saveRDS()</code>, <code>write.csv()</code>, etc.</li>
+<li>Never save your command history: write your code in <i class="fa-brands fa-r-project" aria-label="r-project"></i> scripts, not in the console</li>
+</ul>
+</div>
+</div>
+<p><strong>Now follow instruction to <a href="git.html">configure git</a></strong>.</p>
 
 
 
