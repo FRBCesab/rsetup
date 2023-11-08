@@ -25,14 +25,35 @@
     "href": "chapters/windows.html#check",
     "title": "Windows 10/11",
     "section": "Check",
-    "text": "Check\n   Restart your machine.\nOpen RStudio and run:\n\n## Get R version ----\nR.version.string\n# \"R version 4.3.2 (2023-10-31)\"\n\n## Check if git is installed ----\nSys.which(\"git\")\n#                               git\n# \"C:\\\\PROGRA~1\\\\Git\\\\cmd\\\\git.exe\"\n\n## Check if Rtools is installed ----\nSys.which(\"make\")\n#                               make \n# \"C:\\\\rtools43\\\\usr\\\\bin\\\\make.exe\"\n\n## Check if Pandoc is installed ----\nSys.which(\"pandoc\")\n#                                    pandoc \n# \"C:\\\\PROGRA~3\\\\CHOCOL~1\\\\bin\\\\pandoc.exe\"\n\n## Check if Quarto is installed ----\nSys.which(\"Quarto\")\n#                                    Quarto \n# \"C:\\\\PROGRA~3\\\\CHOCOL~1\\\\bin\\\\Quarto.exe\"\n\n## Check if LaTeX is installed ----\nSys.which(\"pdflatex\")\n#                                                                    pdflatex \n# \"C:\\\\Users\\\\janedoe\\\\AppData\\\\Roaming\\\\TinyTex\\\\bin\\\\windows\\\\pdflatex.exe\" \n\n## Check if Docker is installed ----\nSys.which(\"docker\")\n#                                                    docker \n# \"C:\\\\PROGRA~1\\\\Docker\\\\Docker\\\\RESOUR~1\\\\bin\\\\docker.exe\" \n\n## Install package from sources ----\ninstall.packages(\"jsonlite\", type = \"source\")\n\n\n\n\n\n\n\nCongratulations\n\n\n\nYou’ve just installed a working environment for data science w/ , , and .  Now follow instruction to configure your system."
+    "text": "Check\n   Restart your machine.\nOpen RStudio and run:\n\n## Get R version ----\nR.version.string\n# \"R version 4.3.2 (2023-10-31)\"\n\n## Check if git is installed ----\nSys.which(\"git\")\n#                               git\n# \"C:\\\\PROGRA~1\\\\Git\\\\cmd\\\\git.exe\"\n\n## Check if Rtools is installed ----\nSys.which(\"make\")\n#                               make \n# \"C:\\\\rtools43\\\\usr\\\\bin\\\\make.exe\"\n\n## Check if Pandoc is installed ----\nSys.which(\"pandoc\")\n#                                    pandoc \n# \"C:\\\\PROGRA~3\\\\CHOCOL~1\\\\bin\\\\pandoc.exe\"\n\n## Check if Quarto is installed ----\nSys.which(\"Quarto\")\n#                                    Quarto \n# \"C:\\\\PROGRA~3\\\\CHOCOL~1\\\\bin\\\\Quarto.exe\"\n\n## Check if LaTeX is installed ----\nSys.which(\"pdflatex\")\n#                                                                    pdflatex \n# \"C:\\\\Users\\\\janedoe\\\\AppData\\\\Roaming\\\\TinyTex\\\\bin\\\\windows\\\\pdflatex.exe\" \n\n## Check if Docker is installed ----\nSys.which(\"docker\")\n#                                                    docker \n# \"C:\\\\PROGRA~1\\\\Docker\\\\Docker\\\\RESOUR~1\\\\bin\\\\docker.exe\" \n\n## Install package from sources ----\ninstall.packages(\"jsonlite\", type = \"source\")\n\n\n\n\n\n\n\nUpdate your system regularly\n\n\n\nKeep your Windows Apps up-to-date by running:\n## Check for updates ----\nchoco outdated\n\n## Update Windows Apps ----\nchoco upgrade all"
   },
   {
-    "objectID": "chapters/macos.html",
-    "href": "chapters/macos.html",
+    "objectID": "chapters/windows.html#configuration",
+    "href": "chapters/windows.html#configuration",
+    "title": "Windows 10/11",
+    "section": "Configuration",
+    "text": "Configuration\nYou’ve just installed a working environment for data science w/ , , and .  Now follow instruction to configure your system."
+  },
+  {
+    "objectID": "chapters/macos.html#installation",
+    "href": "chapters/macos.html#installation",
     "title": "macOS",
-    "section": "",
-    "text": "…"
+    "section": "Installation",
+    "text": "Installation\n\n\n\nSoftware\nDescription\nWebsite\n\n\n\n\nR\nThe R environment\nlink\n\n\nXQuartz\nGraphical window system\nlink\n\n\nRStudio Desktop\nIntegrated development environment (IDE) for R\nlink\n\n\nPandoc\nDocument converter used by rmarkdown\nlink\n\n\nQuarto CLI\nScientific publishing system built on Pandoc\nlink\n\n\nGit\nVersion control software\nlink\n\n\nDocker Desktop\nContainerization software\nlink\n\n\n\nWe are going to install the required software by using Homebrew, a package manager for macOS. A package manager is a way to get software (and software updates) onto your machine without much work on your part. It’s the macOS equivalent of yum, pacman or apt-get.\nBefore installing Homebrew, we need to install the Apple software Xcode Command Line Tools. It is a self-contained package for software developers who wish to build Mac apps using UNIX-style commands.\nOpen a Terminal, run this line and accept the license:\n## Install Xcode Command Line Tools ----\nsudo xcode-select --install\nWe can now install Homebrew itself by running:\n## Install Homebrew ----\n/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"\n\n## Check installation ----\nbrew --version\n# Homebrew 4.1.19\n\n## Update repositories (list of available software) ----\nbrew update\nIt’s time to install the required softwares:\n## Install utilities for R ----\nbrew install --cask xquartz     ## Graphical window system\nbrew install gfortran           ## FORTRAN compiler for GCC\n\n## Install R ----\nbrew install --cask r\n\n## Install RStudio Desktop ----\nbrew install --cask rstudio\n\n## Install git ----\nbrew install git\n\n## Install pandoc ----\nbrew install pandoc\n\n## Install Quarto ----\nbrew install --cask quarto\n\n## Install Docker ----\nbrew install docker\nIn addition, we need to install the  package quarto:\n\n## Install quarto package ----\ninstall.packages(\"quarto\")\n\nFinally, let’s install a LaTeX distribution to convert documents from .Rmd (or .qmd) to .pdf. We are going to install a lightened distribution w/ the  package tinytex.\n\n## Install tinytex package ----\ninstall.packages(\"tinytex\")\n\n## Install LaTeX distribution ----\ntinytex::install_tinytex()\n\n\n\n\n\n\n\nImportant\n\n\n\nIf you already have a LaTeX distribution, do not use tinytex."
+  },
+  {
+    "objectID": "chapters/macos.html#check",
+    "href": "chapters/macos.html#check",
+    "title": "macOS",
+    "section": "Check",
+    "text": "Check\n   Restart your machine.\nOpen RStudio and run:\n\n## Get R version ----\nR.version.string\n# \"R version 4.3.2 (2023-10-31)\"\n\n## Check if git is installed ----\nSys.which(\"git\")\n#            git\n# \"/usr/bin/git\"\n\n## Check if Rtools is installed ----\nSys.which(\"make\")\n#            make \n# \"/usr/bin/make\"\n\n## Check if Pandoc is installed ----\nSys.which(\"pandoc\")\n#                  pandoc \n# \"/usr/local/bin/pandoc\"\n\n## Check if Quarto is installed ----\nSys.which(\"Quarto\")\n#                  Quarto \n# \"/usr/local/bin/Quarto\"\n\n## Check if LaTeX is installed ----\nSys.which(\"pdflatex\")\n#                  pdflatex \n# \"/usr/local/bin/pdflatex\" \n\n## Check if Docker is installed ----\nSys.which(\"docker\")\n#                  docker \n# \"/usr/local/bin/docker\" \n\n## Install package from sources ----\ninstall.packages(\"jsonlite\", type = \"source\")\n\n\n\n\n\n\n\nUpdate your system regularly\n\n\n\nKeep your macOS Apps up-to-date by running:\n## Check for updates ----\nbrew update\n\n## Update macOS Apps ----\nbrew upgrade --greedy"
+  },
+  {
+    "objectID": "chapters/macos.html#configuration",
+    "href": "chapters/macos.html#configuration",
+    "title": "macOS",
+    "section": "Configuration",
+    "text": "Configuration\nYou’ve just installed a working environment for data science w/ , , and .  Now follow instruction to configure your system."
   },
   {
     "objectID": "chapters/ubuntu.html",
