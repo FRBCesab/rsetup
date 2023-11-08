@@ -1,3 +1,21 @@
 # RStudio {.unnumbered}
 
-...
+This page presents the minimal configuration of **RStudio Desktop** for a better 
+reproducibility.
+
+Go to **`Tools > Global Options > General`** and:
+
+- uncheck **_Restore .RData into workspace at startup_**
+- select **_Never save workspace to .RData on exit_**
+- uncheck **_Always save history (even when not saving .RData)_**
+
+![Figure 1: Configuration of RStudio IDE](../images/rstudio-ideconfig.png){width=75% fig-align="left"}
+
+::: {.callout-note}
+## Tips for better reproducibility
+
+- Never save your workspace as `.RData`: decide what you want to save and use
+`save()`, `saveRDS()`, `write.csv()`, etc.
+- Never save your command history: write your code in {{< fa brands r-project >}} 
+scripts, not in the console
+:::
