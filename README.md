@@ -6,13 +6,14 @@
 
 Source of the [tutorial](https://frbcesab.github.io/rsetup/) **_Setting up R for Data Science_**.
 
+
+### Citation
+
+> Casajus N (2023) A user guide to set up R for data science. URL: <https://frbcesab.github.io/rsetup/>
+
 <hr />
 
 Website built with :heart: with 
 [`Quarto`](https://quarto.org/) & 
 [`GitHub Actions`](https://github.com/features/actions).
 
-
-### Citation
-
-> Casajus N (2023) A user guide to set up R for data science. URL: <https://frbcesab.github.io/rsetup/>
