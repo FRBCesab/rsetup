@@ -23,6 +23,7 @@ book:
     border: true
   
   reader-mode: false
+  search: false
   
   chapters:
     - index.qmd
