@@ -95,7 +95,7 @@ Check your installation by running:
 ```powershell
 ## Get Chocolatey version ----
 choco --version
-# Chocolatey v2.2.2
+# Chocolatey v2.3.0
 ```
 
 It's time to install the required softwares:
@@ -167,7 +167,7 @@ Open **RStudio** and run:
 
 ## Get R version ----
 R.version.string
-# "R version 4.3.2 (2023-10-31)"
+# "R version 4.4.1 (2024-06-14)"
 
 ## Check if git is installed ----
 Sys.which("git")
