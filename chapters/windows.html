@@ -245,7 +245,7 @@ Warning
 <p>You must use <strong>Windows 10/11</strong> to run WSL.</p>
 </div>
 </div>
-<p>This module is required to install <a href="https://docs.docker.com/desktop/"><strong>Docker Desktop</strong></a>.</p>
+<p><i class="fa-solid fa-warning" aria-label="warning"></i>&nbsp; This module is required only to install <a href="https://docs.docker.com/desktop/"><strong>Docker Desktop</strong></a>. You can ignore this step if you don’t plan to install Docker.</p>
 <p>To install <strong>WSL</strong>, open PowerShell or Windows Terminal in <strong>Administrator mode</strong> by right-clicking and selecting “Run as administrator”, and enter the following command:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Install Windows Subsystem for Linux ----</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>wsl <span class="op">--</span>install</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -290,7 +290,7 @@ Update your Linux system regularly
 <tr class="even">
 <td style="text-align: left;">Rtools</td>
 <td style="text-align: left;">A toolbox to build R packages from source</td>
-<td style="text-align: center;"><a href="https://cran.r-project.org/bin/windows/Rtools/rtools43/rtools.html">link</a></td>
+<td style="text-align: center;"><a href="https://cran.r-project.org/bin/windows/Rtools/rtools44/rtools.html">link</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">RStudio Desktop</td>
@@ -373,7 +373,7 @@ Important
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Get R version ----</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>R.version.string</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># "R version 4.4.1 (2024-06-14)"</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># "R version 4.4.2 (2024-10-31)"</span></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Check if git is installed ----</span></span>
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.which</span>(<span class="st">"git"</span>)</span>
@@ -383,7 +383,7 @@ Important
 <span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Check if Rtools is installed ----</span></span>
 <span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.which</span>(<span class="st">"make"</span>)</span>
 <span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co">#                               make </span></span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co"># "C:\\rtools43\\usr\\bin\\make.exe"</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co"># "C:\\rtools44\\usr\\bin\\make.exe"</span></span>
 <span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="do">## Check if Pandoc is installed ----</span></span>
 <span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.which</span>(<span class="st">"pandoc"</span>)</span>
