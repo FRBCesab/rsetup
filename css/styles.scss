@@ -1,0 +1,25 @@
+/*-- scss:defaults --*/
+
+// fonts
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+
+$font-family-monospace: "Fira Code", monospace !default;
+
+/*-- scss:rules --*/
+
+
+/* Quarto links */
+
+p.author a {
+  color: #343A40;
+}
+
+p.affiliation a {
+  color: #343A40;
+}
+
+nav.quarto-page-breadcrumbs ol li a {
+  color: #343A40;
+}
+
