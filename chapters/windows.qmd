@@ -16,7 +16,7 @@ You must use **Windows 10/11** to run WSL.
 :::
 
 
-This module is required to install [**Docker Desktop**](https://docs.docker.com/desktop/).
+{{< fa warning >}}&nbsp; This module is required only to install [**Docker Desktop**](https://docs.docker.com/desktop/). You can ignore this step if you don't plan to install Docker.
 
 To install **WSL**, open PowerShell or Windows Terminal in **Administrator mode** by right-clicking 
 and selecting "Run as administrator", and enter the following command:
@@ -65,7 +65,7 @@ sudo apt update && sudo apt upgrade
 | Software        | Description                                    | Website                                                                    |
 | :-------------- | :--------------------------------------------- | :------------------------------------------------------------------------: |
 | R               | The R environment                              | [link](https://cran.r-project.org/)                                        |
-| Rtools          | A toolbox to build R packages from source      | [link](https://cran.r-project.org/bin/windows/Rtools/rtools43/rtools.html) |
+| Rtools          | A toolbox to build R packages from source      | [link](https://cran.r-project.org/bin/windows/Rtools/rtools44/rtools.html) |
 | RStudio Desktop | Integrated development environment (IDE) for R | [link](https://posit.co/download/rstudio-desktop/)                         |
 | Pandoc          | Document converter used by `rmarkdown`         | [link](https://pandoc.org/)                                                |
 | Quarto CLI      | Scientific publishing system built on Pandoc   | [link](https://quarto.org/)                                                |
@@ -167,7 +167,7 @@ Open **RStudio** and run:
 
 ## Get R version ----
 R.version.string
-# "R version 4.4.1 (2024-06-14)"
+# "R version 4.4.2 (2024-10-31)"
 
 ## Check if git is installed ----
 Sys.which("git")
@@ -177,7 +177,7 @@ Sys.which("git")
 ## Check if Rtools is installed ----
 Sys.which("make")
 #                               make 
-# "C:\\rtools43\\usr\\bin\\make.exe"
+# "C:\\rtools44\\usr\\bin\\make.exe"
 
 ## Check if Pandoc is installed ----
 Sys.which("pandoc")

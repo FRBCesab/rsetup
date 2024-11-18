@@ -62,17 +62,17 @@ To install **RStudio Desktop**, follow these steps
 
 
 ```sh
-## Download RStudio Desktop installer (Ubuntu = 22.04) ----
-# wget https://download1.rstudio.org/electron/jammy/amd64/rstudio-2024.04.2-764-amd64.deb
+## Download RStudio Desktop installer (Ubuntu >= 22.04) ----
+# wget https://download1.rstudio.org/electron/jammy/amd64/rstudio-2024.09.1-394-amd64.deb
 
 ## Download RStudio Desktop installer (Ubuntu = 20.04) ----
-# wget https://download1.rstudio.org/electron/focal/amd64/rstudio-2024.04.2-764-amd64.deb
+# wget https://download1.rstudio.org/electron/focal/amd64/rstudio-2024.09.1-394-amd64.deb
 
 ## Install RStudio Desktop ----
-sudo dpkg -i rstudio-2024.04.2-764-amd64.deb
+sudo dpkg -i rstudio-2024.09.1-394-amd64.deb
 
 ## Remove installer ----
-rm rstudio-2024.04.2-764-amd64.deb
+rm rstudio-2024.09.1-394-amd64.deb
 ```
 
 Now let's install **git**:
@@ -97,13 +97,13 @@ includes dozens of new features and capabilities.
 
 ```sh
 ## Download Quarto installer ----
-wget https://github.com/quarto-dev/quarto-cli/releases/download/v1.5.57/quarto-1.5.57-linux-amd64.deb
+wget https://github.com/quarto-dev/quarto-cli/releases/download/v1.6.36/quarto-1.6.36-linux-amd64.deb
 
 ## Install Quarto ----
-sudo dpkg -i quarto-1.5.57-linux-amd64.deb
+sudo dpkg -i quarto-1.6.36-linux-amd64.deb
 
 ## Remove installer ----
-rm quarto-1.5.57-linux-amd64.deb
+rm quarto-1.6.36-linux-amd64.deb
 ```
 
 Finally, let's install **Docker Desktop**:
@@ -182,7 +182,7 @@ Open **RStudio** and run:
 
 ## Get R version ----
 R.version.string
-# "R version 4.4.1 (2024-06-14)"
+# "R version 4.4.2 (2024-10-31)"
 
 ## Check if git is installed ----
 Sys.which("git")

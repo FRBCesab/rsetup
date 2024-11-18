@@ -125,7 +125,7 @@ Open **RStudio** and run:
 
 ## Get R version ----
 R.version.string
-# "R version 4.4.1 (2024-06-14)"
+# "R version 4.4.2 (2024-10-31)"
 
 ## Check if git is installed ----
 Sys.which("git")
