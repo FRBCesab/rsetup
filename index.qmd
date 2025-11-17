@@ -1,34 +1,74 @@
 ---
-toc: false
+toc: true
 ---
 
-# Welcome {.unnumbered}
+<br />
 
+## Welcome {.unnumbered}
 
-Welcome to this guide that will help you to correctly install and configure a 
-working environment for data science with 
-{{< fa brands r-project >}}, {{< fa brands github >}}, and {{< fa brands docker >}}.
+::: {.callout-important}
+## Update your system {.unnumbered}
 
-To install softwares, please visit the page corresponding to your operating system:
-
-- [Windows](chapters/windows.html)&nbsp; {{< fa brands windows >}}
-- [macOS](chapters/macos.html)&nbsp; {{< fa brands apple >}}
-- [Ubuntu](chapters/ubuntu.html)&nbsp; {{< fa brands ubuntu >}}
-
-
-::: {.callout-note}
-## Tip
-
-Having an up-to-date environment is the first good practice. Do not forget to
-**update your operating system**!
+Having an up-to-date environment is a **prerequisite** for all FRB-CESAB training courses. Please
+**update your whole system** (operating system, software and {{< fa brands r-project >}} packages) **before starting the course**!
 :::
 
 
-Once you've installed all the required softwares, please make sure to configure:
+This guide will help you install, set up and update a working environment for data science in {{< fa brands r-project >}} (and others) required for FRB-CESAB training courses. 
+
+|                                                 | Course | Tutorial |
+|:---------------------------------------------------:|:-----------------|:----------:|
+| ![](images/logo-rdatatoolbox_150dpi.png){width=40%} | Reproducible research in computational ecology | [Link](chapters/reproducible-research.html) |
+| ![](images/logo-theodatasci_150dpi.png){width=40%}  | Theory-driven analysis of ecological data      | [Link](chapters/theodatasci.html) |
+| ![](images/logo-literaturesynthesis_150dpi.png){width=40%}  | Systematic reviews & meta-analyses      | [Link](chapters/literaturesynthesis.html) |
+| ![](images/logo-econetoolbox_150dpi.png){width=40%}  | Analyzing ecological networks      | [Link](chapters/econetoolbox.html) |
+| ![](images/logo-biodiversitydata_150dpi.png){width=40%}  | Biodiversity data management      | [Link](chapters/biodiversitydata.html) |
+| ![](images/logo-iabiodiversity_150dpi.png){width=40%}  | Artificial intelligence for ecologists: A toolkit      | [Link](chapters/iabiodiversity.html) |
+
+: **Table 1.** List of FRB-CESAB training courses {tbl-colwidths="[10,70,20]"}
+
+<br />
+
+**NB.** Not all software is required for all courses: please follow the tutorial that is tailored to your course.
+
+
+| Course                                              | R                | RStudio          | Positron         | Quarto           | Git              | GitHub           | Docker           | OpenRefine        | Stan             |
+|:---------------------------------------------------:|:----------------:|:----------------:|:----------------:|:----------------:|:----------------:|:----------------:|:----------------:|:----------------:|:----------------:|
+| ![](images/logo-rdatatoolbox_150dpi.png){width=25%} | {{< fa square-check >}} | {{< fa square-xmark >}} | {{< fa square-check >}} | {{< fa square-check >}} | {{< fa square-check >}} | {{< fa square-check >}} | {{< fa square-minus >}} | {{< fa square-xmark >}} | {{< fa square-xmark >}} |
+| ![](images/logo-theodatasci_150dpi.png){width=25%}  | {{< fa square-check >}} | {{< fa square-minus >}} | {{< fa square-minus >}} | {{< fa square-xmark >}} | {{< fa square-xmark >}} | {{< fa square-xmark >}} | {{< fa square-xmark >}} | {{< fa square-xmark >}} | {{< fa square-check >}} |
+| ![](images/logo-literaturesynthesis_150dpi.png){width=25%}  | {{< fa square-check >}} | {{< fa square-minus >}} | {{< fa square-minus >}} | {{< fa square-xmark >}} | {{< fa square-xmark >}} | {{< fa square-xmark >}} | {{< fa square-xmark >}} | {{< fa square-xmark >}} | {{< fa square-xmark >}} |
+| ![](images/logo-econetoolbox_150dpi.png){width=25%}  | {{< fa square-check >}} | {{< fa square-minus >}} | {{< fa square-minus >}} | {{< fa square-xmark >}} | {{< fa square-xmark >}} | {{< fa square-xmark >}} | {{< fa square-xmark >}} | {{< fa square-xmark >}} | {{< fa square-xmark >}} |
+| ![](images/logo-biodiversitydata_150dpi.png){width=25%}  | {{< fa square-check >}} | {{< fa square-minus >}} | {{< fa square-minus >}} | {{< fa square-xmark >}} | {{< fa square-xmark >}} | {{< fa square-xmark >}} | {{< fa square-xmark >}} | {{< fa square-check >}} | {{< fa square-xmark >}} |
+| ![](images/logo-iabiodiversity_150dpi.png){width=25%}  | {{< fa square-xmark >}} | {{< fa square-xmark >}} | {{< fa square-xmark >}} | {{< fa square-xmark >}} | {{< fa square-xmark >}} | {{< fa square-xmark >}} | {{< fa square-xmark >}} | {{< fa square-xmark >}} | {{< fa square-xmark >}} |
+: **Table 2.** List of software for each FRB-CESAB training courses
+
+{{< fa square-check >}}&nbsp; _software required_ &nbsp; {{< fa square-minus >}}&nbsp; _optional_ &nbsp; {{< fa square-xmark >}}&nbsp; _not required_
+
+
+<br />
+
+
+
+
+Once you've installed all the required software, please make sure to set up:
 
 - [RStudio](chapters/rstudio.html)
+- [Positron](chapters/positron.html)
 - [git](chapters/git.html)
 - [GitHub SSH keys](chapters/github-ssh.html)
 - [GitHub Personal Access Token](chapters/github-token.html)
 
 
+## Citation {.unnumbered}
+
+> Casajus N (2025) Setting up a working environment for data science with R. URL: <https://frbcesab.github.io/rsetup/>
+
+
+## Contributions {.unnumbered}
+
+If you see mistakes or want to suggest changes, please [create an issue](https://github.com/frbcesab/rsetup/issues/new) on the source repository.
+
+
+## Reuse {.unnumbered}
+
+Text and figures are licensed under Creative Commons Attribution [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), unless otherwise noted.
