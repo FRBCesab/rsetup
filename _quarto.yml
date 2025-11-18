@@ -27,17 +27,17 @@ book:
   chapters:
     - index.qmd
     - chapters/reproducible-research.qmd
-    - part: "Installation"
-      chapters:
-        - chapters/windows.qmd
-        - chapters/macos.qmd
-        - chapters/ubuntu.qmd
-    - part: "Configuration"
-      chapters:
-        - chapters/rstudio.qmd
-        - chapters/git.qmd
-        - chapters/github-ssh.qmd
-        - chapters/github-token.qmd
+    # - part: "Installation"
+    #   chapters:
+    #     - chapters/windows.qmd
+    #     - chapters/macos.qmd
+    #     - chapters/ubuntu.qmd
+    # - part: "Configuration"
+    #   chapters:
+    #     - chapters/rstudio.qmd
+    #     - chapters/git.qmd
+    #     - chapters/github-ssh.qmd
+    #     - chapters/github-token.qmd
 
 format:
   html:

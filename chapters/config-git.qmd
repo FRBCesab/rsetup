@@ -1,0 +1,61 @@
+### git {.unnumbered}
+
+To use **git** to version your projects, you need to store your credentials 
+(username and email) on your laptop.
+
+Open `Positron`and run these lines in the {{< fa brands r-project >}} console:
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Install 'gert' R package ----
+install.packages("gert")
+
+# Store your git user name ----
+gert::git_config_global_set(
+  name = "user.name", 
+  value = "Jane Doe"            ## replace this value
+)
+
+# Store your git user email ----
+gert::git_config_global_set(
+  name = "user.email", 
+  value = "jane.doe@mail.com"   ## replace this value
+)
+```
+
+When you create a new `git` project, the default branch is named **_master_**. 
+It's recommended to replace **_master_** by **_main_** (for more information read this
+[article](https://www.zdnet.com/article/github-to-replace-master-with-alternative-term-to-avoid-slavery-references/)).
+
+Run this line in the {{< fa brands r-project >}} console:
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Store your git user name ----
+gert::git_config_global_set(
+  name = "init.defaultBranch", 
+  value = "main"
+)
+```
+
+From now, when you will initialize `git` in a project, the default branch 
+will be **main**.
+
+Check your `git` configuration:
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Store your git user name ----
+gert::git_config_global()
+
+#               name                 value      level
+#          user.name              Jane Doe     global
+#         user.email     jane.doe@mail.com     global
+# init.defaultbranch                  main     global
+```

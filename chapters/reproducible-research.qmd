@@ -1,4 +1,4 @@
-## Reproducible research in computational ecology {.unnumbered}
+# Reproducible research in computational ecology {.unnumbered}
 
 <br />
 
@@ -8,26 +8,351 @@
 ::: {.callout-note}
 ## Course information
 
-The objective of this five-day [training course](https://rdatatoolbox.github.io/), co-organized by the [FRB-CESAB](https://www.fondationbiodiversite.fr/en/about-the-foundation/le-cesab/) and the [GdR EcoStat](https://sites.google.com/site/gdrecostat/), is to train researchers in reproducibility, software development and version management tools (e.g. `git`, `GitHub`, `Quarto`, `renv`, `Docker`), applied to biodiversity research.
+The objective of this five-day [training course](https://rdatatoolbox.github.io/), co-organized by the [FRB-CESAB](https://www.fondationbiodiversite.fr/en/about-the-foundation/le-cesab/) and the [GdR EcoStat](https://sites.google.com/site/gdrecostat/), is to train researchers in **reproducibility**, **software development** and **version control** tools (e.g. `git`, `GitHub`, `Quarto`, `renv`, `Docker`), applied to biodiversity research.
+:::
+
+<br />
+
+## Installation
+
+::: {.panel-tabset}
+
+### {{< fa brands windows >}}&nbsp; Windows
+
+#### Required software
+
+Please install the following software before attending the course:
+
+| Software     | Description                                                       | Website                                                |
+| :----------- | :---------------------------------------------------------------- | :----------------------------------------------------: |
+| `R 4.5.2`    | The R environment                                                 | [link](https://cran.r-project.org/)                    |
+| `Rtools 4.5` | A toolbox to build R packages from source                         | [link](https://cran.r-project.org/bin/windows/Rtools/) |
+| `Quarto`     | Scientific publishing system (alternative to Rmarkdown)           | [link](https://quarto.org/)                            |
+| `Git`        | Version control software                                          | [link](https://git-scm.com/)                           |
+| `Positron`   | Integrated development environment for R (alternative to RStudio) | [link](https://positron.posit.co/)                     |
+
+{{< fa circle-info >}}&nbsp; **Note:** Positron bundles the Quarto software: **you don't need to install Quarto** manually. **Rtools note:** download the default Rtools (not the 64-bit ARM installer). **Positron note:** Download the system level installer (not the user level installer). **Git note:** accept all default options during installation.
+
+<br />
+
+#### Check installation
+
+After **restarting your laptop**, open `Positron`. Then, launch `R` (click on **Start Session** button) and run the following lines:
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Get R version ----
+R.version.string
+# "R version 4.5.2 (2025-10-31 ucrt)"
+
+# Check if git is installed and detected ----
+Sys.which("git")
+# "C:\\PROGRA~1\\Git\\cmd\\git.exe"
+
+# Check if Rtools is installed and detected ----
+Sys.which("make")
+# "C:\\rtools45\\usr\\bin\\make.exe"
+
+# Check if you can install packages from sources (need Rtools) ----
+install.packages("jsonlite", type = "source")
+```
+
+
+### {{< fa brands apple >}}&nbsp; macOS
+
+#### Required software
+
+Please install the following software before attending the course:
+
+| Software     | Description                                                       | Website                                                |
+| :----------- | :---------------------------------------------------------------- | :----------------------------------------------------: |
+| `R 4.5.2`    | The R environment                                                 | [link](https://cran.r-project.org/)                    |
+| `XQuartz`    | Graphical window system                                           | [link](https://www.xquartz.org/)                       |
+| `Quarto`     | Scientific publishing system (alternative to Rmarkdown)           | [link](https://quarto.org/)                            |
+| `Git`        | Version control software                                          | [link](https://git-scm.com/)                           |
+| `Positron`   | Integrated development environment for R (alternative to RStudio) | [link](https://positron.posit.co/)                     |
+
+{{< fa circle-info >}}&nbsp; **Note:** Positron bundles the Quarto software: **you don't need to install Quarto** manually.
+
+
+::: {.callout-tip}
+## Installation with Homebrew {.unnumbered}
+
+[**Homebrew**](https://brew.sh) is a package manager for macOS. A package manager is a way to get software (and software updates) onto your machine using the command line. It's the macOS equivalent of `dnf`, `pacman` or `apt`.
+
+Before installing **Homebrew**, you need to install the Apple software
+**Xcode Command Line Tools**. It is a self-contained package for software developers 
+who wish to build Mac apps using UNIX-style commands. It's required by **Homebrew**.
+
+Open a [Terminal](https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac), 
+run this line (you will have to accept the license):
+
+```sh
+# Install Xcode Command Line Tools ----
+sudo xcode-select --install
+```
+
+You can now install **Homebrew** itself by running:
+
+```sh
+# Install Homebrew ----
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Check installation ----
+brew --version
+# Homebrew 5.0.2
+
+# Update repositories (list of available software) ----
+brew update
+```
+
+It's time to install the required software:
+
+```sh
+# Install utilities for R ----
+brew install --cask xquartz     ## Graphical window system
+brew install gfortran           ## FORTRAN compiler for GCC
+
+# Install R ----
+brew install --cask r
+
+# Install Positron ----
+brew install --cask positron
+
+# Install git ----
+brew install git
+```
+:::
+
+<br />
+
+#### Check installation
+
+After **restarting your laptop**, open `Positron`. Then, launch `R` (click on **Start Session** button) and run the following lines:
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Get R version ----
+R.version.string
+# "R version 4.5.2 (2025-10-31 ucrt)"
+
+# Check if git is installed and detected ----
+Sys.which("git")
+# "/usr/bin/git"
+
+# Check if Rtools is installed and detected ----
+Sys.which("make")
+# "/usr/bin/make"
+
+# Check if you can install packages from sources ----
+install.packages("jsonlite", type = "source")
+```
+
+
+
+### {{< fa brands ubuntu >}}&nbsp; Ubuntu
+
+#### Required software
+
+Here is the list of the required software:
+
+| Software     | Description                                                       | Website                                                |
+| :----------- | :---------------------------------------------------------------- | :----------------------------------------------------: |
+| `R 4.5.2`    | The R environment                                                 | [link](https://cran.r-project.org/)                    |
+| `Quarto`     | Scientific publishing system (alternative to Rmarkdown)           | [link](https://quarto.org/)                            |
+| `Git`        | Version control software                                          | [link](https://git-scm.com/)                           |
+| `Positron`   | Integrated development environment for R (alternative to RStudio) | [link](https://positron.posit.co/)                     |
+
+{{< fa circle-info >}}&nbsp; **Note:** Positron bundles the Quarto software: **you don't need to install Quarto** manually.
+
+
+<br />
+
+##### Install R
+
+```sh
+# Update APT repository indices ----
+sudo apt update -qq
+
+# Install helper packages ----
+sudo apt install --no-install-recommends software-properties-common dirmngr wget
+
+# Add CRAN GPG key ----
+wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
+
+# Add CRAN repository to APT repository list ----
+sudo add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/"
+
+# Update APT repository indices ----
+sudo apt update
+
+# Install R ----
+sudo apt install r-base r-base-dev
+```
+
+<br />
+
+##### Install git
+
+
+```sh
+# Install git ----
+sudo apt install git
+```
+
+<br />
+
+##### Install Positron
+
+
+```sh
+# Download Positron ---
+POSITRON_VERSION='2025.11.0-234'
+wget https://cdn.posit.co/positron/releases/deb/x86_64/Positron-$POSITRON_VERSION-x64.deb
+
+# Install/update Positron ----
+sudo gdebi Positron-$POSITRON_VERSION-x64.deb
+```
+
+
+<br />
+
+#### Check installation
+
+After **restarting your laptop**, open `Positron`. Then, launch `R` (click on **Start Session** button) and run the following lines:
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Get R version ----
+R.version.string
+# "R version 4.5.2 (2025-10-31)"
+
+# Check if git is installed and detected ----
+Sys.which("git")
+# "/usr/bin/git"
+
+# Check if compilation tools are installed and detected ----
+Sys.which("make")
+# "/usr/bin/make"
+
+# Check if Quarto is installed and detected ----
+Sys.which("quarto")
+# "/usr/share/positron/resources/app/quarto/bin/quarto"
+
+# Check if you can install packages from sources ----
+install.packages("jsonlite", type = "source")
+```
+
+
+### {{< fa brands fedora >}}&nbsp; Fedora
+
+Here is the list of the required software:
+
+| Software     | Description                                                       | Website                                                |
+| :----------- | :---------------------------------------------------------------- | :----------------------------------------------------: |
+| `R 4.5.2`    | The R environment                                                 | [link](https://cran.r-project.org/)                    |
+| `Quarto`     | Scientific publishing system (alternative to Rmarkdown)           | [link](https://quarto.org/)                            |
+| `Git`        | Version control software                                          | [link](https://git-scm.com/)                           |
+| `Positron`   | Integrated development environment for R (alternative to RStudio) | [link](https://positron.posit.co/)                     |
+
+{{< fa circle-info >}}&nbsp; **Note:** Positron bundles the Quarto software: **you don't need to install Quarto** manually.
+
+<br />
+
+##### Install R
+
+```sh
+# Install R ----
+sudo dnf install R
+```
+
+<br />
+
+##### Install git
+
+
+```sh
+# Install git ----
+sudo dnf install git
+```
+
+
+<br />
+
+##### Install Positron
+
+
+```sh
+# Download Positron ---
+POSITRON_VERSION='2025.11.0-234'
+wget https://cdn.posit.co/positron/prereleases/rpm/x86_64/Positron-$POSITRON_VERSION-x64.rpm
+
+# Install Positron ----
+sudo rpm -ivh Positron-$POSITRON_VERSION-x64.rpm
+
+# Clean directory ----
+rm Positron-$POSITRON_VERSION-x64.rpm
+```
+
+
+<br />
+
+#### Check installation
+
+After **restarting your laptop**, open `Positron`. Then, launch `R` (click on **Start Session** button) and run the following lines:
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Get R version ----
+R.version.string
+# "R version 4.5.2 (2025-10-31)"
+
+# Check if git is installed and detected ----
+Sys.which("git")
+# "/usr/bin/git"
+
+# Check if compilation tools are installed and detected ----
+Sys.which("make")
+# "/usr/bin/make"
+
+# Check if Quarto is installed and detected ----
+Sys.which("quarto")
+# "/usr/share/positron/resources/app/quarto/bin/quarto"
+
+# Check if you can install packages from sources ----
+install.packages("jsonlite", type = "source")
+```
 :::
 
 
-### Installation
+## Configuration
 
-#### Windows 11
+```{r}
+#| child: "config-git.qmd"
+```
 
-...
+<br />
 
-#### MacOS
+### GitHub Account
 
-...
+<br />
 
-#### Ubuntu
+```{r}
+#| child: "config-gh-pat.qmd"
+```
 
-...
+<br />
 
-#### Fedora
+```{r}
+#| child: "config-positron.qmd"
+```
 
-...
-
-### Configuration
+<!-- ... R packages -->

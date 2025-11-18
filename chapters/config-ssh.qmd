@@ -1,4 +1,4 @@
-# GitHub SSH keys {.unnumbered}
+### GitHub SSH keys {.unnumbered}
 
 To communicate with [GitHub](https://github.com), you can use the protocol HTTPS (default)
 or the protocol SSH (recommended). The protocol SSH is a more secure method of 

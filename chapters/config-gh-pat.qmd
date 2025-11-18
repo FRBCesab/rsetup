@@ -1,4 +1,4 @@
-# GitHub Personal Access Token {.unnumbered}
+### GitHub API token {.unnumbered}
 
 If you want to use the GitHub API, essentially with the 
 {{< fa brands r-project >}} packages
@@ -16,7 +16,7 @@ Proceed as follow:
 5. In the section _Select scopes_, select at least **repo** and **workflow**
 6. Copy this token
 
-Then open **RStudio Desktop** and run: 
+Then open `Positron`and run these lines in the {{< fa brands r-project >}} console:
 
 ```{r}
 #| echo: true
@@ -33,9 +33,10 @@ usethis::edit_r_environ()
 
 The last command will open the `~/.Renviron` file. Add this new line: 
 `GITHUB_PAT='ghp_XXX'` where `ghp_XXX` is your token.
-Do not forget to restart **RStudio Desktop**.
+Do not forget to restart the R session.
 
 
+<!--
 
 Finally let's tell `usethis` to use the SSH protocol to communicate with GitHub. 
 Open **RStudio** and run:
@@ -52,6 +53,18 @@ usethis::edit_r_profile()
 
 In the `~/.Rprofile` file, add this new line: `options(usethis.protocol = "ssh")`.
 Do not forget to restart **RStudio Desktop**.
+
+-->
+
+Finally, let's check that your GitHub PAT is accessible from {{< fa brands r-project >}}:
+
+```{r}
+#| echo: true
+#| eval: false
+
+Sys.getenv("GITHUB_PAT")
+# ghp_XXX
+```
 
 ::: {.callout-note}
 ## To go further
