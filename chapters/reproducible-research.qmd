@@ -218,12 +218,18 @@ sudo apt install git
 
 
 ```sh
+# Install helper package ----
+sudo apt install gdebi-core
+
 # Download Positron ---
 POSITRON_VERSION='2025.11.0-234'
 wget https://cdn.posit.co/positron/releases/deb/x86_64/Positron-$POSITRON_VERSION-x64.deb
 
 # Install/update Positron ----
 sudo gdebi Positron-$POSITRON_VERSION-x64.deb
+
+# Clean directory ----
+rm Positron-$POSITRON_VERSION-x64.deb
 ```
 
 
@@ -259,6 +265,8 @@ install.packages("jsonlite", type = "source")
 
 
 ### {{< fa brands fedora >}}&nbsp; Fedora
+
+#### Required software
 
 Here is the list of the required software:
 
