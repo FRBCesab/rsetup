@@ -467,6 +467,8 @@ Once the package is installed, you need to store some personal information local
 
 # Open the ~/.Rprofile file ----
 usethis::edit_r_profile()
+# • Modify '~/.Rprofile'
+# • Restart R for changes to take effect
 ```
 
 And paste these lines in the `~/.Rprofile` file:

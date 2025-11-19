@@ -45,6 +45,20 @@ gert::git_config_global_set(
 From now, when you will initialize `git` in a project, the default branch 
 will be **main**.
 
+Finally, let's add this option to use `nano` as the default text editor for editing commits (instead of `vi`):
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Define nano as the default cli text editor ----
+gert::git_config_global_set(
+  name = "core.editor", 
+  value = "nano"
+)
+```
+
+
 Check your `git` configuration:
 
 ```{r}
@@ -57,4 +71,5 @@ gert::git_config_global()
 #          user.name              Jane Doe     global
 #         user.email     jane.doe@mail.com     global
 # init.defaultbranch                  main     global
+#        core.editor                  nano     global
 ```
