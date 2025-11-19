@@ -451,12 +451,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="install-positron" class="level5">
 <h5 class="anchored" data-anchor-id="install-positron">Install Positron</h5>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Download Positron ---</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="va">POSITRON_VERSION</span><span class="op">=</span><span class="st">'2025.11.0-234'</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://cdn.posit.co/positron/releases/deb/x86_64/Positron-<span class="va">$POSITRON_VERSION</span>-x64.deb</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Install/update Positron ----</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> gdebi Positron-<span class="va">$POSITRON_VERSION</span>-x64.deb</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install helper package ----</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install gdebi-core</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Download Positron ---</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="va">POSITRON_VERSION</span><span class="op">=</span><span class="st">'2025.11.0-234'</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://cdn.posit.co/positron/releases/deb/x86_64/Positron-<span class="va">$POSITRON_VERSION</span>-x64.deb</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Install/update Positron ----</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> gdebi Positron-<span class="va">$POSITRON_VERSION</span>-x64.deb</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Clean directory ----</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> Positron-<span class="va">$POSITRON_VERSION</span>-x64.deb</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><br></p>
 </section>
 </section>
@@ -486,6 +492,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 </div>
 <div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
+<section id="required-software-3" class="level4">
+<h4 class="anchored" data-anchor-id="required-software-3">Required software</h4>
 <p>Here is the list of the required software:</p>
 <table class="caption-top table">
 <thead>
@@ -547,6 +555,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Clean directory ----</span></span>
 <span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> Positron-<span class="va">$POSITRON_VERSION</span>-x64.rpm</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><br></p>
+</section>
 </section>
 <section id="check-installation-3" class="level4">
 <h4 class="anchored" data-anchor-id="check-installation-3">Check installation</h4>
