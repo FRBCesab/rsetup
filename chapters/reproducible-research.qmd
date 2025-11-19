@@ -16,7 +16,7 @@ The objective of this five-day [training course](https://rdatatoolbox.github.io/
 ::: {.callout-important}
 ## A word about Docker {.unnumbered}
 
-During this training course we will introduce Docker, a containerization solution to reach a high level of reproducibility. But **the installation of Docker is not required** as no exercise is planned for this topic.
+During this training course we will introduce [Docker](https://www.docker.com/get-started/), a containerization solution to reach a high level of reproducibility. But **the installation of Docker is not required** as no exercise is planned for this topic.
 :::
 
 <br />
