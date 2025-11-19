@@ -9,7 +9,7 @@ Source of the [tutorial](https://frbcesab.github.io/rsetup/) **_Setting up R for
 
 ### Citation
 
-> Casajus N (2023) A user guide to set up R for data science. URL: <https://frbcesab.github.io/rsetup/>
+> Casajus N (2025) Setting up a working environment for data science with R. URL: <https://frbcesab.github.io/rsetup/>
 
 <hr />
 
