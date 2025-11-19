@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Setting up R",
     "section": "",
-    "text": "Welcome\nThis guide will help you install, set up and update a working environment for data science in  (and others) required for FRB-CESAB training courses.\nNB. Not all software is required for all courses: please follow the tutorial that is tailored to your course.\nsoftware required     optional     not required\nOnce you’ve installed all the required software, please make sure to set up:",
+    "text": "Welcome\nThis guide will help you install, set up and update a working environment for data science in  (and others) required for FRB-CESAB training courses.",
     "crumbs": [
       "Welcome"
     ]
@@ -14,7 +14,7 @@
     "href": "index.html#welcome",
     "title": "Setting up R",
     "section": "",
-    "text": "ImportantUpdate your system\n\n\n\nHaving an up-to-date environment is a prerequisite for all FRB-CESAB training courses. Please update your whole system (operating system, software and  packages) before starting the course!\n\n\n\n\nTable 1. List of FRB-CESAB training courses\n\n\n\n\n\n\n\n\nCourse\nTutorial\n\n\n\n\n\nReproducible research in computational ecology\nLink\n\n\n\nTheory-driven analysis of ecological data\nLink\n\n\n\nSystematic reviews & meta-analyses\nLink\n\n\n\nAnalyzing ecological networks\nLink\n\n\n\nBiodiversity data management\nLink\n\n\n\nArtificial intelligence for ecologists: A toolkit\nLink\n\n\n\n\n\n\nTable 2. List of software for each FRB-CESAB training courses\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCourse\nR\nRStudio\nPositron\nQuarto\nGit\nGitHub\nDocker\nOpenRefine\nStan\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRStudio\nPositron\ngit\nGitHub SSH keys\nGitHub Personal Access Token",
+    "text": "ImportantUpdate your system\n\n\n\nHaving an up-to-date environment is a prerequisite for all FRB-CESAB training courses. Please update your whole system (operating system, software and  packages) before starting the course!\n\n\n\n\nTable 1. List of FRB-CESAB training courses\n\n\n\n\n\n\n\n\nCourse\nTutorial\n\n\n\n\n\nReproducible research in computational ecology\nLink\n\n\n\nTheory-driven analysis of ecological data\nLink\n\n\n\nSystematic reviews & meta-analyses\nLink\n\n\n\nAnalyzing ecological networks\nLink\n\n\n\nBiodiversity data management\nLink\n\n\n\nArtificial intelligence for ecologists: A toolkit\nLink",
     "crumbs": [
       "Welcome"
     ]
