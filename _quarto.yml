@@ -16,7 +16,7 @@ book:
   favicon: images/favicon.png
   
   page-footer: 
-    left: "&copy; CC-By [FRB-CESAB](https://www.fondationbiodiversite.fr/en/about-the-foundation/le-cesab/)"
+    left: "&copy; CC BY 4.0 [FRB-CESAB](https://www.fondationbiodiversite.fr/en/about-the-foundation/le-cesab/)"
     center: "Code source available on [{{< fa brands github >}}](https://github.com/frbcesab/rsetup/)"
     right: "Built with [Quarto](https://quarto.org/)"
     border: true

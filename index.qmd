@@ -16,18 +16,20 @@ Having an up-to-date environment is a **prerequisite** for all FRB-CESAB trainin
 
 This guide will help you install, set up and update a working environment for data science in {{< fa brands r-project >}} (and others) required for FRB-CESAB training courses. 
 
-|                                                 | Course | Tutorial |
-|:---------------------------------------------------:|:-----------------|:----------:|
-| ![](images/logo-rdatatoolbox_150dpi.png){width=40%} | Reproducible research in computational ecology | [Link](chapters/reproducible-research.html) |
-| ![](images/logo-theodatasci_150dpi.png){width=40%}  | Theory-driven analysis of ecological data      | [Link](chapters/theodatasci.html) |
-| ![](images/logo-literaturesynthesis_150dpi.png){width=40%}  | Systematic reviews & meta-analyses      | [Link](chapters/literaturesynthesis.html) |
-| ![](images/logo-econetoolbox_150dpi.png){width=40%}  | Analyzing ecological networks      | [Link](chapters/econetoolbox.html) |
-| ![](images/logo-biodiversitydata_150dpi.png){width=40%}  | Biodiversity data management      | [Link](chapters/biodiversitydata.html) |
-| ![](images/logo-iabiodiversity_150dpi.png){width=40%}  | Artificial intelligence for ecologists: A toolkit      | [Link](chapters/iabiodiversity.html) |
+|                                                            | Course | Tutorial |
+|:----------------------------------------------------------:|:--------------------------------------------------|:-------------------------------------------:|
+| ![](images/logo-rdatatoolbox_150dpi.png){width=40%}        | Reproducible research in computational ecology    | [Link](chapters/reproducible-research.html) |
+| ![](images/logo-theodatasci_150dpi.png){width=40%}         | Theory-driven analysis of ecological data         | Link                                        |
+| ![](images/logo-literaturesynthesis_150dpi.png){width=40%} | Systematic reviews & meta-analyses                | Link                                        |
+| ![](images/logo-econetoolbox_150dpi.png){width=40%}        | Analyzing ecological networks                     | Link                                        |
+| ![](images/logo-biodiversitydata_150dpi.png){width=40%}    | Biodiversity data management                      | Link                                        |
+| ![](images/logo-iabiodiversity_150dpi.png){width=40%}      | Artificial intelligence for ecologists: A toolkit | Link                                        |
 
 : **Table 1.** List of FRB-CESAB training courses {tbl-colwidths="[10,70,20]"}
 
 <br />
+
+<!--
 
 **NB.** Not all software is required for all courses: please follow the tutorial that is tailored to your course.
 
@@ -44,19 +46,7 @@ This guide will help you install, set up and update a working environment for da
 
 {{< fa square-check >}}&nbsp; _software required_ &nbsp; {{< fa square-minus >}}&nbsp; _optional_ &nbsp; {{< fa square-xmark >}}&nbsp; _not required_
 
-
-<br />
-
-
-
-
-Once you've installed all the required software, please make sure to set up:
-
-- [RStudio](chapters/rstudio.html)
-- [Positron](chapters/positron.html)
-- [git](chapters/git.html)
-- [GitHub SSH keys](chapters/github-ssh.html)
-- [GitHub Personal Access Token](chapters/github-token.html)
+-->
 
 
 ## Citation {.unnumbered}
