@@ -13,6 +13,14 @@ The objective of this five-day [training course](https://rdatatoolbox.github.io/
 
 <br />
 
+::: {.callout-important}
+## A word about Docker {.unnumbered}
+
+During this training course we will introduce Docker, a containerization solution to reach a high level of reproducibility. But **the installation of Docker is not required** as no exercise is planned for this topic.
+:::
+
+<br />
+
 ## Installation
 
 ::: {.panel-tabset}
@@ -296,6 +304,9 @@ wget https://cdn.posit.co/positron/prereleases/rpm/x86_64/Positron-$POSITRON_VER
 # Install Positron ----
 sudo rpm -ivh Positron-$POSITRON_VERSION-x64.rpm
 
+# Update Positron ----
+# sudo rpm -Uvh Positron-$POSITRON_VERSION-x64.rpm
+
 # Clean directory ----
 rm Positron-$POSITRON_VERSION-x64.rpm
 ```
@@ -341,7 +352,9 @@ install.packages("jsonlite", type = "source")
 
 <br />
 
-### GitHub Account
+### GitHub account
+
+For this course, you need to **create a GitHub account**  by visiting <https://github.com/signup>.
 
 <br />
 
@@ -349,10 +362,132 @@ install.packages("jsonlite", type = "source")
 #| child: "config-gh-pat.qmd"
 ```
 
+
 <br />
 
+### {{< fa brands r-project >}}&nbsp; packages
+
 ```{r}
-#| child: "config-positron.qmd"
+#| echo: true
+#| eval: false
+
+# Project management ----
+pkgs <- c(
+  "devtools", 
+  "gert", 
+  "here", 
+  "rdeps",
+  "remotes",
+  "renv", 
+  "targets", 
+  "tarchetypes", 
+  "usethis"
+)
+
+install.packages(pkgs)
+
+# Literate programming ----
+pkgs <- c(
+  "knitr", 
+  "quarto", 
+  "rmarkdown"
+)
+
+install.packages(pkgs)
+
+# Data wrangling/visualization ----
+pkgs <- c(
+  "dplyr",
+  "ggplot2",
+  "readr",
+  "rlang"
+)
+
+install.packages(pkgs)
 ```
 
-<!-- ... R packages -->
+
+
+<br />
+
+### The `rcompendium` package
+
+In order to assist us in creating the structure of our research compendium (project directory), 
+we will use the {{< fa brands r-project >}} [`rcompendium`](https://github.com/frbcesab/rcompendium) 
+package. This package allows for the automation of creating files and directories 
+specific to a research compendium (and to a {{< fa brands r-project >}} package).
+
+The package is released on the [CRAN](https://cran.r-project.org/web/packages/rcompendium/index.html) but we will install the development version from [GitHub](https://github.com/frbcesab/rcompendium):
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Install 'rcompendium' package from GitHub ----
+remotes::install_github("frbcesab/rcompendium")
+
+# Attach 'rcompendium' package -----
+library("rcompendium")
+```
+
+::: {.callout-important}
+## Issue with `rcompendium` installation {.unnumbered}
+
+Some **Linux users** may have trouble installing `rcompendium`. Try this:
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Download V8 software ----
+Sys.setenv(DOWNLOAD_STATIC_LIBV8 = 1)
+
+# Install 'rcompendium' package from GitHub ----
+remotes::install_github("frbcesab/rcompendium")
+
+# Attach 'rcompendium' package -----
+library("rcompendium")
+```
+:::
+
+
+Once the package is installed, you need to store some personal information locally (first name, last name, email, ORCID, communication protocol with GitHub). This information will automatically populate certain files in the compendium. You will store this information in the `~/.Rprofile` file.
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Open the ~/.Rprofile file ----
+usethis::edit_r_profile()
+```
+
+And paste these lines in the `~/.Rprofile` file:
+
+```{r}
+#| echo: true
+#| eval: false
+
+options(
+  given = "Jane",
+  family = "Doe",
+  email = "jane.doe@mail.me",
+  orcid = "0000-0000-0000-0000"
+)
+
+options(usethis.protocol = "https") # or "ssh" if you deployed SSH keys to communicate w/ GitHub
+```
+
+**Restart the {{< fa brands r-project >}} session** and verify that your personal information is accessible by {{< fa brands r-project >}}:
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Retrieve email ----
+getOption("email")
+# [1] "jane.doe@mail.me"
+
+# Retrieve family name ----
+getOption("family")
+# [1] "Doe"
+```

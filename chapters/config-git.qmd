@@ -35,7 +35,7 @@ Run this line in the {{< fa brands r-project >}} console:
 #| echo: true
 #| eval: false
 
-# Store your git user name ----
+# Rename git default branch name ----
 gert::git_config_global_set(
   name = "init.defaultBranch", 
   value = "main"
@@ -51,9 +51,8 @@ Check your `git` configuration:
 #| echo: true
 #| eval: false
 
-# Store your git user name ----
+# Print git global configuration ----
 gert::git_config_global()
-
 #               name                 value      level
 #          user.name              Jane Doe     global
 #         user.email     jane.doe@mail.com     global
