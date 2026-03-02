@@ -8,7 +8,7 @@
 
 <meta name="description" content="A user guide to set up a working environment for FRB-CESAB training courses ">
 
-<title>Reproducible research in computational ecology – Setting up R</title>
+<title>Theory-driven analysis for ecological data – Setting up R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -61,8 +61,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<link href="../chapters/theoretical-models.html" rel="next">
-<link href="../index.html" rel="prev">
+<link href="../chapters/reproducible-research.html" rel="prev">
 <link href="../images/favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
@@ -106,7 +105,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/reproducible-research.html">Reproducible research in computational ecology</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/theoretical-models.html">Theory-driven analysis for ecological data</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -131,13 +130,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/reproducible-research.html" class="sidebar-item-text sidebar-link active">
+  <a href="../chapters/reproducible-research.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Reproducible research in computational ecology</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/theoretical-models.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/theoretical-models.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Theory-driven analysis for ecological data</span></a>
   </div>
 </li>
@@ -152,14 +151,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#installation" id="toc-installation" class="nav-link active" data-scroll-target="#installation">Installation</a></li>
-  <li><a href="#configuration" id="toc-configuration" class="nav-link" data-scroll-target="#configuration">Configuration</a>
-  <ul class="collapse">
-  <li><a href="#git" id="toc-git" class="nav-link" data-scroll-target="#git">git</a></li>
-  <li><a href="#github-account" id="toc-github-account" class="nav-link" data-scroll-target="#github-account">GitHub account</a></li>
-  <li><a href="#github-api-token" id="toc-github-api-token" class="nav-link" data-scroll-target="#github-api-token">GitHub API token</a></li>
-  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages"><i class="fa-brands fa-r-project" aria-label="r-project"></i>&nbsp; packages</a></li>
-  <li><a href="#the-rcompendium-package" id="toc-the-rcompendium-package" class="nav-link" data-scroll-target="#the-rcompendium-package">The <code>rcompendium</code> package</a></li>
-  </ul></li>
+  <li><a href="#stan" id="toc-stan" class="nav-link" data-scroll-target="#stan">Stan</a></li>
   </ul>
 </nav>
     </div>
@@ -168,7 +160,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Reproducible research in computational ecology</h1>
+<h1 class="title">Theory-driven analysis for ecological data</h1>
 </div>
 
 
@@ -188,7 +180,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><br></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/collection-rdatatoolbox.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
+<p><img src="../images/collection-theodatasci.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -201,21 +193,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The objective of this five-day <a href="https://rdatatoolbox.github.io/">training course</a>, co-organized by the <a href="https://www.fondationbiodiversite.fr/en/about-the-foundation/le-cesab/">FRB-CESAB</a> and the <a href="https://sites.google.com/site/gdrecostat/">GdR EcoStat</a>, is to train researchers in <strong>reproducibility</strong>, <strong>software development</strong> and <strong>version control</strong> tools (e.g.&nbsp;<code>git</code>, <code>GitHub</code>, <code>Quarto</code>, <code>renv</code>, <code>Docker</code>), applied to biodiversity research.</p>
-</div>
-</div>
-<p><br></p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>A word about Docker
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>During this training course we will introduce <a href="https://www.docker.com/get-started/">Docker</a>, a containerization solution to reach a high level of reproducibility. But <strong>the installation of Docker is not required</strong> as no exercise is planned for this topic.</p>
+<p>The objective of this five-day <a href="https://rdatatoolbox.github.io/">training course</a>, co-organized by the <a href="https://www.fondationbiodiversite.fr/en/about-the-foundation/le-cesab/">FRB-CESAB</a> and the <a href="https://sete-moulis-cnrs.fr/en/research/centre-for-biodiversity-theory-and-modelling/theomodive">GdR TheoMoDive</a>, is to train young researchers in building and analyzing mathematical models that will help them better understand ecological data. By contrast with purely statistical models, <strong>this course emphasizes a process-driven approach based on ecological theory</strong>. The course covers a general introduction to ecological modeling and thematic sessions focused on three topics of interest (time series, spatial data, interaction networks). Each topic is explored through mathematical models as well as inferential and predictive approaches, with a mix of courses and practical.</p>
 </div>
 </div>
 <p><br></p>
@@ -248,43 +226,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: center;"><a href="https://cran.r-project.org/bin/windows/Rtools/">link</a></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><code>Quarto</code></td>
-<td style="text-align: left;">Scientific publishing system (alternative to Rmarkdown)</td>
-<td style="text-align: center;"><a href="https://quarto.org/">link</a></td>
+<td style="text-align: left;"><code>RStudio</code> <strong><sup>*</sup></strong></td>
+<td style="text-align: left;">Integrated development environment for R</td>
+<td style="text-align: center;"><a href="https://posit.co/download/rstudio-desktop/">link</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>Git</code></td>
-<td style="text-align: left;">Version control software</td>
-<td style="text-align: center;"><a href="https://git-scm.com/">link</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>Positron</code></td>
+<td style="text-align: left;"><code>Positron</code> <strong><sup>*</sup></strong></td>
 <td style="text-align: left;">Integrated development environment for R (alternative to RStudio)</td>
 <td style="text-align: center;"><a href="https://positron.posit.co/">link</a></td>
 </tr>
 </tbody>
 </table>
-<p><i class="fa-solid fa-circle-info" aria-label="circle-info"></i>&nbsp; <strong>Note:</strong> Positron bundles the Quarto software: <strong>you don’t need to install Quarto</strong> manually. <strong>Rtools note:</strong> download the default Rtools (not the 64-bit ARM installer). <strong>Positron note:</strong> Download the system level installer (not the user level installer). <strong>Git note:</strong> accept all default options during installation.</p>
+<p><strong><sup>*</sup></strong> Optional</p>
 <p><br></p>
 </section>
 <section id="check-installation" class="level4">
 <h4 class="anchored" data-anchor-id="check-installation">Check installation</h4>
-<p>After <strong>restarting your laptop</strong>, open <code>Positron</code>. Then, launch <code>R</code> (click on <strong>Start Session</strong> button) and run the following lines:</p>
+<p>After <strong>restarting your laptop</strong>, open <code>RStudio</code> (or <code>Positron</code>) and run the following lines in the R console:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get R version ----</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>R.version.string</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># "R version 4.5.2 (2025-10-31 ucrt)"</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if git is installed and detected ----</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.which</span>(<span class="st">"git"</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># "C:\\PROGRA~1\\Git\\cmd\\git.exe"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if Rtools is installed and detected ----</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.which</span>(<span class="st">"make"</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># "C:\\rtools45\\usr\\bin\\make.exe"</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if Rtools is installed and detected ----</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.which</span>(<span class="st">"make"</span>)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># "C:\\rtools45\\usr\\bin\\make.exe"</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if you can install packages from sources (need Rtools) ----</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"jsonlite"</span>, <span class="at">type =</span> <span class="st">"source"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if you can install packages from sources (need Rtools) ----</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"jsonlite"</span>, <span class="at">type =</span> <span class="st">"source"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 </div>
@@ -312,23 +281,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: center;"><a href="https://www.xquartz.org/">link</a></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><code>Quarto</code></td>
-<td style="text-align: left;">Scientific publishing system (alternative to Rmarkdown)</td>
-<td style="text-align: center;"><a href="https://quarto.org/">link</a></td>
+<td style="text-align: left;"><code>RStudio</code> <strong><sup>*</sup></strong></td>
+<td style="text-align: left;">Integrated development environment for R</td>
+<td style="text-align: center;"><a href="https://posit.co/download/rstudio-desktop/">link</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>Git</code></td>
-<td style="text-align: left;">Version control software</td>
-<td style="text-align: center;"><a href="https://git-scm.com/">link</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>Positron</code></td>
+<td style="text-align: left;"><code>Positron</code> <strong><sup>*</sup></strong></td>
 <td style="text-align: left;">Integrated development environment for R (alternative to RStudio)</td>
 <td style="text-align: center;"><a href="https://positron.posit.co/">link</a></td>
 </tr>
 </tbody>
 </table>
-<p><i class="fa-solid fa-circle-info" aria-label="circle-info"></i>&nbsp; <strong>Note:</strong> Positron bundles the Quarto software: <strong>you don’t need to install Quarto</strong> manually.</p>
+<p><strong><sup>*</sup></strong> Optional</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -350,7 +314,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check installation ----</span></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> <span class="at">--version</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Homebrew 5.0.2</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Homebrew 5.0.16</span></span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Update repositories (list of available software) ----</span></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> update</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -362,33 +326,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Install R ----</span></span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install <span class="at">--cask</span> r</span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Install Positron ----</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install <span class="at">--cask</span> positron</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Install RStudio (optional) ----</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install <span class="at">--cask</span> rstudio</span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Install git ----</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Install Positron (optional) ----</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install <span class="at">--cask</span> positron</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <p><br></p>
 </section>
 <section id="check-installation-1" class="level4">
 <h4 class="anchored" data-anchor-id="check-installation-1">Check installation</h4>
-<p>After <strong>restarting your laptop</strong>, open <code>Positron</code>. Then, launch <code>R</code> (click on <strong>Start Session</strong> button) and run the following lines:</p>
+<p>After <strong>restarting your laptop</strong>, open <code>RStudio</code> (or <code>Positron</code>) and run the following lines in the R console:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get R version ----</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>R.version.string</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># "R version 4.5.2 (2025-10-31 ucrt)"</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if git is installed and detected ----</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.which</span>(<span class="st">"git"</span>)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># "/usr/bin/git"</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if Rtools is installed and detected ----</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.which</span>(<span class="st">"make"</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># "/usr/bin/make"</span></span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if Rtools is installed and detected ----</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.which</span>(<span class="st">"make"</span>)</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co"># "/usr/bin/make"</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if you can install packages from sources ----</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"jsonlite"</span>, <span class="at">type =</span> <span class="st">"source"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if you can install packages from sources ----</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"jsonlite"</span>, <span class="at">type =</span> <span class="st">"source"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 </div>
@@ -411,23 +371,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: center;"><a href="https://cran.r-project.org/">link</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>Quarto</code></td>
-<td style="text-align: left;">Scientific publishing system (alternative to Rmarkdown)</td>
-<td style="text-align: center;"><a href="https://quarto.org/">link</a></td>
+<td style="text-align: left;"><code>RStudio</code> <strong><sup>*</sup></strong></td>
+<td style="text-align: left;">Integrated development environment for R</td>
+<td style="text-align: center;"><a href="https://posit.co/download/rstudio-desktop/">link</a></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><code>Git</code></td>
-<td style="text-align: left;">Version control software</td>
-<td style="text-align: center;"><a href="https://git-scm.com/">link</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>Positron</code></td>
+<td style="text-align: left;"><code>Positron</code> <strong><sup>*</sup></strong></td>
 <td style="text-align: left;">Integrated development environment for R (alternative to RStudio)</td>
 <td style="text-align: center;"><a href="https://positron.posit.co/">link</a></td>
 </tr>
 </tbody>
 </table>
-<p><i class="fa-solid fa-circle-info" aria-label="circle-info"></i>&nbsp; <strong>Note:</strong> Positron bundles the Quarto software: <strong>you don’t need to install Quarto</strong> manually.</p>
+<p><strong><sup>*</sup></strong> Optional</p>
 <p><br></p>
 <section id="install-r" class="level5">
 <h5 class="anchored" data-anchor-id="install-r">Install R</h5>
@@ -450,19 +405,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install r-base r-base-dev</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><br></p>
 </section>
-<section id="install-git" class="level5">
-<h5 class="anchored" data-anchor-id="install-git">Install git</h5>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install git ----</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="install-rstudio-optional" class="level5">
+<h5 class="anchored" data-anchor-id="install-rstudio-optional">Install RStudio (optional)</h5>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install helper package ----</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install gdebi-covers</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Download RStudio ---</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="va">RSTUDIO_VERSION</span><span class="op">=</span><span class="st">'2026.01.1-403'</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://download1.rstudio.org/electron/jammy/amd64/rstudio-<span class="va">$RSTUDIO_VERSION</span>-amd64.deb</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Install/update RStudio ----</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> gdebi rstudio-<span class="va">$RSTUDIO_VERSION</span>-amd64.deb</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Clean directory ----</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> rstudio-<span class="va">$RSTUDIO_VERSION</span>-amd64.deb</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><br></p>
 </section>
-<section id="install-positron" class="level5">
-<h5 class="anchored" data-anchor-id="install-positron">Install Positron</h5>
+<section id="install-positron-optional" class="level5">
+<h5 class="anchored" data-anchor-id="install-positron-optional">Install Positron (optional)</h5>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install helper package ----</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install gdebi-core</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Download Positron ---</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="va">POSITRON_VERSION</span><span class="op">=</span><span class="st">'2025.11.0-234'</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="va">POSITRON_VERSION</span><span class="op">=</span><span class="st">'2026.02.1-5'</span></span>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://cdn.posit.co/positron/releases/deb/x86_64/Positron-<span class="va">$POSITRON_VERSION</span>-x64.deb</span>
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Install/update Positron ----</span></span>
@@ -475,26 +440,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="check-installation-2" class="level4">
 <h4 class="anchored" data-anchor-id="check-installation-2">Check installation</h4>
-<p>After <strong>restarting your laptop</strong>, open <code>Positron</code>. Then, launch <code>R</code> (click on <strong>Start Session</strong> button) and run the following lines:</p>
+<p>After <strong>restarting your laptop</strong>, open <code>RStudio</code> (or <code>Positron</code>) and run the following lines in the R console:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get R version ----</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>R.version.string</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># "R version 4.5.2 (2025-10-31)"</span></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if git is installed and detected ----</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.which</span>(<span class="st">"git"</span>)</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># "/usr/bin/git"</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if compilation tools are installed and detected ----</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.which</span>(<span class="st">"make"</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># "/usr/bin/make"</span></span>
 <span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if compilation tools are installed and detected ----</span></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.which</span>(<span class="st">"make"</span>)</span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co"># "/usr/bin/make"</span></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if Quarto is installed and detected ----</span></span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.which</span>(<span class="st">"quarto"</span>)</span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="co"># "/usr/share/positron/resources/app/quarto/bin/quarto"</span></span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if you can install packages from sources ----</span></span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"jsonlite"</span>, <span class="at">type =</span> <span class="st">"source"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if you can install packages from sources ----</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"jsonlite"</span>, <span class="at">type =</span> <span class="st">"source"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 </div>
@@ -517,23 +474,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: center;"><a href="https://cran.r-project.org/">link</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>Quarto</code></td>
-<td style="text-align: left;">Scientific publishing system (alternative to Rmarkdown)</td>
-<td style="text-align: center;"><a href="https://quarto.org/">link</a></td>
+<td style="text-align: left;"><code>RStudio</code> <strong><sup>*</sup></strong></td>
+<td style="text-align: left;">Integrated development environment for R</td>
+<td style="text-align: center;"><a href="https://posit.co/download/rstudio-desktop/">link</a></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><code>Git</code></td>
-<td style="text-align: left;">Version control software</td>
-<td style="text-align: center;"><a href="https://git-scm.com/">link</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>Positron</code></td>
+<td style="text-align: left;"><code>Positron</code> <strong><sup>*</sup></strong></td>
 <td style="text-align: left;">Integrated development environment for R (alternative to RStudio)</td>
 <td style="text-align: center;"><a href="https://positron.posit.co/">link</a></td>
 </tr>
 </tbody>
 </table>
-<p><i class="fa-solid fa-circle-info" aria-label="circle-info"></i>&nbsp; <strong>Note:</strong> Positron bundles the Quarto software: <strong>you don’t need to install Quarto</strong> manually.</p>
+<p><strong><sup>*</sup></strong> Optional</p>
 <p><br></p>
 <section id="install-r-1" class="level5">
 <h5 class="anchored" data-anchor-id="install-r-1">Install R</h5>
@@ -541,16 +493,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> dnf install R</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><br></p>
 </section>
-<section id="install-git-1" class="level5">
-<h5 class="anchored" data-anchor-id="install-git-1">Install git</h5>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install git ----</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> dnf install git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="install-rstudio-optional-1" class="level5">
+<h5 class="anchored" data-anchor-id="install-rstudio-optional-1">Install RStudio (optional)</h5>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Download RStudio ---</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="va">RSTUDIO_VERSION</span><span class="op">=</span><span class="st">'2026.01.1-403'</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://download1.rstudio.org/electron/rhel9/x86_64/rstudio-<span class="va">$RSTUDIO_VERSION</span>-x86_64.rpm</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Install RStudio ----</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> rpm <span class="at">-ivh</span> rstudio-<span class="va">$RSTUDIO_VERSION</span>-x86_64.rpm</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Update RStudio ----</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co"># sudo rpm -Uvh rstudio-$RSTUDIO_VERSION--x86_64.rpm</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Clean directory ----</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> rstudio-<span class="va">$RSTUDIO_VERSION</span>--x86_64.rpm</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><br></p>
 </section>
-<section id="install-positron-1" class="level5">
-<h5 class="anchored" data-anchor-id="install-positron-1">Install Positron</h5>
+<section id="install-positron-optional-1" class="level5">
+<h5 class="anchored" data-anchor-id="install-positron-optional-1">Install Positron (optional)</h5>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Download Positron ---</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="va">POSITRON_VERSION</span><span class="op">=</span><span class="st">'2025.11.0-234'</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="va">POSITRON_VERSION</span><span class="op">=</span><span class="st">'2026.02.1-5'</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://cdn.posit.co/positron/prereleases/rpm/x86_64/Positron-<span class="va">$POSITRON_VERSION</span>-x64.rpm</span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Install Positron ----</span></span>
@@ -566,261 +528,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="check-installation-3" class="level4">
 <h4 class="anchored" data-anchor-id="check-installation-3">Check installation</h4>
-<p>After <strong>restarting your laptop</strong>, open <code>Positron</code>. Then, launch <code>R</code> (click on <strong>Start Session</strong> button) and run the following lines:</p>
+<p>After <strong>restarting your laptop</strong>, open <code>RStudio</code> (or <code>Positron</code>) and run the following lines in the R console:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get R version ----</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>R.version.string</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># "R version 4.5.2 (2025-10-31)"</span></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if git is installed and detected ----</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.which</span>(<span class="st">"git"</span>)</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co"># "/usr/bin/git"</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if compilation tools are installed and detected ----</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.which</span>(<span class="st">"make"</span>)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co"># "/usr/bin/make"</span></span>
 <span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if compilation tools are installed and detected ----</span></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.which</span>(<span class="st">"make"</span>)</span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="co"># "/usr/bin/make"</span></span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if Quarto is installed and detected ----</span></span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.which</span>(<span class="st">"quarto"</span>)</span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="co"># "/usr/share/positron/resources/app/quarto/bin/quarto"</span></span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if you can install packages from sources ----</span></span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"jsonlite"</span>, <span class="at">type =</span> <span class="st">"source"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if you can install packages from sources ----</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"jsonlite"</span>, <span class="at">type =</span> <span class="st">"source"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 </div>
 </div>
 </div>
 </section>
-<section id="configuration" class="level2">
-<h2 class="anchored" data-anchor-id="configuration">Configuration</h2>
-<section id="git" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="git">git</h3>
-<p>To use <strong>git</strong> to version your projects, you need to store your credentials (username and email) on your laptop.</p>
-<p>Open <code>Positron</code>and run these lines in the <i class="fa-brands fa-r-project" aria-label="r-project"></i> console:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install 'gert' R package ----</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"gert"</span>)</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Store your git user name ----</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>gert<span class="sc">::</span><span class="fu">git_config_global_set</span>(</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">name =</span> <span class="st">"user.name"</span>, </span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">value =</span> <span class="st">"Jane Doe"</span>            <span class="do">## replace this value</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Store your git user email ----</span></span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>gert<span class="sc">::</span><span class="fu">git_config_global_set</span>(</span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">name =</span> <span class="st">"user.email"</span>, </span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">value =</span> <span class="st">"jane.doe@mail.com"</span>   <span class="do">## replace this value</span></span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>When you create a new <code>git</code> project, the default branch is named <strong><em>master</em></strong>. It’s recommended to replace <strong><em>master</em></strong> by <strong><em>main</em></strong> (for more information read this <a href="https://www.zdnet.com/article/github-to-replace-master-with-alternative-term-to-avoid-slavery-references/">article</a>).</p>
-<p>Run this line in the <i class="fa-brands fa-r-project" aria-label="r-project"></i> console:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rename git default branch name ----</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>gert<span class="sc">::</span><span class="fu">git_config_global_set</span>(</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">name =</span> <span class="st">"init.defaultBranch"</span>, </span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">value =</span> <span class="st">"main"</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>From now, when you will initialize <code>git</code> in a project, the default branch will be <strong>main</strong>.</p>
-<p>Finally, let’s add this option to use <code>nano</code> as the default text editor for editing commits (instead of <code>vi</code>):</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define nano as the default cli text editor ----</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>gert<span class="sc">::</span><span class="fu">git_config_global_set</span>(</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">name =</span> <span class="st">"core.editor"</span>, </span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">value =</span> <span class="st">"nano"</span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Check your <code>git</code> configuration:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Print git global configuration ----</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>gert<span class="sc">::</span><span class="fu">git_config_global</span>()</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co">#               name                 value      level</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co">#          user.name              Jane Doe     global</span></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co">#         user.email     jane.doe@mail.com     global</span></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co"># init.defaultbranch                  main     global</span></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co">#        core.editor                  nano     global</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p><br></p>
-</section>
-<section id="github-account" class="level3">
-<h3 class="anchored" data-anchor-id="github-account">GitHub account</h3>
-<p>For this course, you need to <strong>create a GitHub account</strong> by visiting <a href="https://github.com/signup" class="uri">https://github.com/signup</a>.</p>
-<p><br></p>
-</section>
-<section id="github-api-token" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="github-api-token">GitHub API token</h3>
-<p>If you want to use the GitHub API, essentially with the <i class="fa-brands fa-r-project" aria-label="r-project"></i> packages <a href="https://usethis.r-lib.org/"><code>usethis</code></a> and <a href="https://cran.r-project.org/package=rcompendium"><code>rcompendium</code></a>, you need to create a <a href="https://docs.github.com/fr/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">GitHub Personal Access Token</a> (PAT).</p>
-<p>Proceed as follow:</p>
-<ol type="1">
-<li>Go to <a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a></li>
-<li>Click on <strong>Generate new token (classic)</strong></li>
-<li>Choose a name for your new token (e.g.&nbsp;your laptop name)</li>
-<li>Select no expiration date</li>
-<li>In the section <em>Select scopes</em>, select at least <strong>repo</strong> and <strong>workflow</strong></li>
-<li>Copy this token</li>
-</ol>
-<p>Then open <code>Positron</code>and run these lines in the <i class="fa-brands fa-r-project" aria-label="r-project"></i> console:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Install usethis package ----</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"usethis"</span>)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Open ~/.Renviron file ----</span></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">edit_r_environ</span>()</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="co"># • Modify '~/.Renviron'</span></span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="co"># • Restart R for changes to take effect</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>The last command will open the <code>~/.Renviron</code> file. Add this new line: <code>GITHUB_PAT='ghp_XXX'</code> where <code>ghp_XXX</code> is your token. Do not forget to restart the R session.</p>
-<!--
-
-Finally let's tell `usethis` to use the SSH protocol to communicate with GitHub. 
-Open **RStudio** and run:
+<section id="stan" class="level2">
+<h2 class="anchored" data-anchor-id="stan">Stan</h2>
+<p>For this course you also need to install <a href="https://mc-stan.org/">Stan</a>, a software for bayesian data analysis. Please follow <a href="https://github.com/stan-dev/rstan/wiki/Installing-RStan-from-Source">this tutorial</a> to install Stan throught the <i class="fa-brands fa-r-project" aria-label="r-project"></i> package <a href="https://mc-stan.org/rstan/"><code>RStan</code></a>.</p>
 
 
-::: {.cell}
-
-```{.r .cell-code}
-## Open ~/.Rprofile file ----
-usethis::edit_r_profile()
-# • Modify '~/.Rprofile'
-# • Restart R for changes to take effect
-```
-:::
-
-
-In the `~/.Rprofile` file, add this new line: `options(usethis.protocol = "ssh")`.
-Do not forget to restart **RStudio Desktop**.
-
--->
-<p>Finally, let’s check that your GitHub PAT is accessible from <i class="fa-brands fa-r-project" aria-label="r-project"></i>:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.getenv</span>(<span class="st">"GITHUB_PAT"</span>)</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ghp_XXX</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>To go further
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li><p>The <code>.Renviron</code> file is a good place to store secrets (API tokens, password, etc.). This file is read by <i class="fa-brands fa-r-project" aria-label="r-project"></i> at startup. To access these variables, you can use the function <code>Sys.getenv("GITHUB_PAT")</code>.</p></li>
-<li><p>The <code>.Rprofile</code> file allows you to run <i class="fa-brands fa-r-project" aria-label="r-project"></i> command lines at startup. You can customize the default behaviour of <i class="fa-brands fa-r-project" aria-label="r-project"></i> and define some variables with <code>options()</code>. To access these variables, you can use <code>options()$"usethis.protocol"</code>.</p></li>
-</ul>
-<p>More information <a href="https://cran.r-project.org/web/packages/startup/vignettes/startup-intro.html">here</a>.</p>
-</div>
-</div>
-<p><br></p>
-</section>
-<section id="packages" class="level3">
-<h3 class="anchored" data-anchor-id="packages"><i class="fa-brands fa-r-project" aria-label="r-project"></i>&nbsp; packages</h3>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Project management ----</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>pkgs <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"devtools"</span>, </span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"gert"</span>, </span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"here"</span>, </span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"rdeps"</span>,</span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"remotes"</span>,</span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">"renv"</span>, </span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">"targets"</span>, </span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">"tarchetypes"</span>, </span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">"usethis"</span></span>
-<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(pkgs)</span>
-<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Literate programming ----</span></span>
-<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>pkgs <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>  <span class="st">"knitr"</span>, </span>
-<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>  <span class="st">"quarto"</span>, </span>
-<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>  <span class="st">"rmarkdown"</span></span>
-<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(pkgs)</span>
-<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Data wrangling/visualization ----</span></span>
-<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a>pkgs <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a>  <span class="st">"dplyr"</span>,</span>
-<span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a>  <span class="st">"ggplot2"</span>,</span>
-<span id="cb20-29"><a href="#cb20-29" aria-hidden="true" tabindex="-1"></a>  <span class="st">"readr"</span>,</span>
-<span id="cb20-30"><a href="#cb20-30" aria-hidden="true" tabindex="-1"></a>  <span class="st">"rlang"</span></span>
-<span id="cb20-31"><a href="#cb20-31" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb20-32"><a href="#cb20-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-33"><a href="#cb20-33" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(pkgs)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p><br></p>
-</section>
-<section id="the-rcompendium-package" class="level3">
-<h3 class="anchored" data-anchor-id="the-rcompendium-package">The <code>rcompendium</code> package</h3>
-<p>In order to assist us in creating the structure of our research compendium (project directory), we will use the <i class="fa-brands fa-r-project" aria-label="r-project"></i> <a href="https://github.com/frbcesab/rcompendium"><code>rcompendium</code></a> package. This package allows for the automation of creating files and directories specific to a research compendium (and to a <i class="fa-brands fa-r-project" aria-label="r-project"></i> package).</p>
-<p>The package is released on the <a href="https://cran.r-project.org/web/packages/rcompendium/index.html">CRAN</a> but we will install the development version from <a href="https://github.com/frbcesab/rcompendium">GitHub</a>:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install 'rcompendium' package from GitHub ----</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"frbcesab/rcompendium"</span>)</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Attach 'rcompendium' package -----</span></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"rcompendium"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Issue with <code>rcompendium</code> installation
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Some <strong>Linux users</strong> may have trouble installing <code>rcompendium</code>. Try this:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Download V8 software ----</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="at">DOWNLOAD_STATIC_LIBV8 =</span> <span class="dv">1</span>)</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Install 'rcompendium' package from GitHub ----</span></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"frbcesab/rcompendium"</span>)</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Attach 'rcompendium' package -----</span></span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"rcompendium"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</div>
-<p>Once the package is installed, you need to store some personal information locally (first name, last name, email, ORCID, communication protocol with GitHub). This information will automatically populate certain files in the compendium. You will store this information in the <code>~/.Rprofile</code> file.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Open the ~/.Rprofile file ----</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">edit_r_profile</span>()</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co"># • Modify '~/.Rprofile'</span></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co"># • Restart R for changes to take effect</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>And paste these lines in the <code>~/.Rprofile</code> file:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">given =</span> <span class="st">"Jane"</span>,</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="st">"Doe"</span>,</span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">email =</span> <span class="st">"jane.doe@mail.me"</span>,</span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">orcid =</span> <span class="st">"0000-0000-0000-0000"</span></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">usethis.protocol =</span> <span class="st">"https"</span>) <span class="co"># or "ssh" if you deployed SSH keys to communicate w/ GitHub</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p><strong>Restart the <i class="fa-brands fa-r-project" aria-label="r-project"></i> session</strong> and verify that your personal information is accessible by <i class="fa-brands fa-r-project" aria-label="r-project"></i>:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Retrieve email ----</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">getOption</span>(<span class="st">"email"</span>)</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co"># [1] "jane.doe@mail.me"</span></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Retrieve family name ----</span></span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="fu">getOption</span>(<span class="st">"family"</span>)</span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="co"># [1] "Doe"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-
-
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1226,14 +956,11 @@ Do not forget to restart **RStudio Desktop**.
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../index.html" class="pagination-link" aria-label="Welcome">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Welcome</span>
+      <a href="../chapters/reproducible-research.html" class="pagination-link" aria-label="Reproducible research in computational ecology">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Reproducible research in computational ecology</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/theoretical-models.html" class="pagination-link" aria-label="Theory-driven analysis for ecological data">
-        <span class="nav-page-text">Theory-driven analysis for ecological data</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
