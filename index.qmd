@@ -19,7 +19,7 @@ This guide will help you install, set up and update a working environment for da
 |                                                            | Course | Tutorial |
 |:----------------------------------------------------------:|:--------------------------------------------------|:-------------------------------------------:|
 | ![](images/logo-rdatatoolbox_150dpi.png){width=40%}        | Reproducible research in computational ecology    | [Link](chapters/reproducible-research.html) |
-| ![](images/logo-theodatasci_150dpi.png){width=40%}         | Theory-driven analysis of ecological data         | Link                                        |
+| ![](images/logo-theodatasci_150dpi.png){width=40%}         | Theory-driven analysis of ecological data         | [Link](chapters/theoretical-models.html)                                       |
 | ![](images/logo-literaturesynthesis_150dpi.png){width=40%} | Systematic reviews & meta-analyses                | Link                                        |
 | ![](images/logo-econetoolbox_150dpi.png){width=40%}        | Analyzing ecological networks                     | Link                                        |
 | ![](images/logo-biodiversitydata_150dpi.png){width=40%}    | Biodiversity data management                      | Link                                        |

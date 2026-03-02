@@ -22,3 +22,5 @@ inst/doc
 _book/
 
 /.quarto/
+
+**/*.quarto_ipynb

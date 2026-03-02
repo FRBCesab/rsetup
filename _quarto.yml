@@ -27,6 +27,7 @@ book:
   chapters:
     - index.qmd
     - chapters/reproducible-research.qmd
+    - chapters/theoretical-models.qmd
     # - part: "Installation"
     #   chapters:
     #     - chapters/windows.qmd
