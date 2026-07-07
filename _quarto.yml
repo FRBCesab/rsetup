@@ -28,6 +28,7 @@ book:
     - index.qmd
     - chapters/reproducible-research.qmd
     - chapters/theoretical-models.qmd
+    - chapters/literature-synthesis.qmd
     - chapters/ecological-networks.qmd
     # - part: "Installation"
     #   chapters:
