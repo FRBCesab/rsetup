@@ -30,6 +30,7 @@ book:
     - chapters/theoretical-models.qmd
     - chapters/literature-synthesis.qmd
     - chapters/ecological-networks.qmd
+    - chapters/biodiversity-data.qmd
     # - part: "Installation"
     #   chapters:
     #     - chapters/windows.qmd

@@ -22,8 +22,8 @@ This guide will help you install, set up and update a working environment for da
 | ![](images/logo-theodatasci_150dpi.png){width=40%}         | Theory-driven analysis of ecological data         | [Link](chapters/theoretical-models.html)    |
 | ![](images/logo-literaturesynthesis_150dpi.png){width=40%} | Systematic reviews & meta-analyses                | [Link](chapters/literature-synthesis.html)  |
 | ![](images/logo-econetoolbox_150dpi.png){width=40%}        | Analyzing ecological networks                     | [Link](chapters/ecological-networks.html)   |
-| ![](images/logo-biodiversitydata_150dpi.png){width=40%}    | Biodiversity data management                      | Link                                        |
-| ![](images/logo-iabiodiversity_150dpi.png){width=40%}      | Artificial intelligence for ecologists: A toolkit | Link                                        |
+| ![](images/logo-biodiversitydata_150dpi.png){width=40%}    | Biodiversity data management                      | [Link](chapters/biodiversity-data.html)     |
+| ![](images/logo-iabiodiversity_150dpi.png){width=40%}      | Artificial intelligence for ecologists: A toolkit | -                                           |
 
 : **Table 1.** List of FRB-CESAB training courses {tbl-colwidths="[10,70,20]"}
 
