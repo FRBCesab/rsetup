@@ -8,7 +8,7 @@
 
 <meta name="description" content="A user guide to set up a working environment for FRB-CESAB training courses ">
 
-<title>Analyzing ecological network data – Setting up R</title>
+<title>Systematic reviews &amp; meta-analyses – Setting up R</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -64,7 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<link href="../chapters/literature-synthesis.html" rel="prev">
+<link href="../chapters/ecological-networks.html" rel="next">
+<link href="../chapters/theoretical-models.html" rel="prev">
 <link href="../images/favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
@@ -107,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/ecological-networks.html">Analyzing ecological network data</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/literature-synthesis.html">Systematic reviews &amp; meta-analyses</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -144,13 +145,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/literature-synthesis.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/literature-synthesis.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Systematic reviews &amp; meta-analyses</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/ecological-networks.html" class="sidebar-item-text sidebar-link active">
+  <a href="../chapters/ecological-networks.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Analyzing ecological network data</span></a>
   </div>
 </li>
@@ -173,7 +174,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Analyzing ecological network data</h1>
+<h1 class="title">Systematic reviews &amp; meta-analyses</h1>
 </div>
 
 
@@ -193,7 +194,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><br></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/collection-econetoolbox.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
+<p><img src="../images/collection-literaturesynthesis.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -206,7 +207,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The objective of this five-day <a href="https://econetoolbox.github.io/">training course</a>, co-organized by the <a href="https://www.fondationbiodiversite.fr/en/about-the-foundation/le-cesab/">FRB-CESAB</a> and the <a href="https://cmatias.perso.math.cnrs.fr/ANR_EcoNet.html">ANR ECONET</a>, is to train researchers in analyzing ecological network data. The course covers a general introduction to networks, classical metrics (including modularity, nesteness, clustering), null models, generative models (including SBM), multilayer networks, as well as an overview of newer techniques (such as embedding). Each topic is explored through lectures followed by practicals.</p>
+<p>The objective of this five-day <a href="https://literaturesynthesis.github.io/">training course</a>, co-organized by the <a href="https://www.fondationbiodiversite.fr/en/about-the-foundation/le-cesab/">FRB-CESAB</a>, the <a href="https://www.patrinat.fr">UAR PatriNat</a>, and the <a href="https://ur-hortsys.cirad.fr/">CIRAD HortSys</a>, is to provide an introduction to the techniques of meta-analysis and systematic reviews/maps applied to the field of biodiversity. It also offers an opportunity to become familiar with various bibliographic tools (Web of Science, OpenAlex, Zotero, etc.) and statistical tools (R packages such as metaDigitise, metafor, etc.).</p>
 </div>
 </div>
 <p><br></p>
@@ -229,7 +230,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><code>R 4.5.3</code></td>
+<td style="text-align: left;"><code>R 4.6.1</code></td>
 <td style="text-align: left;">The R environment</td>
 <td style="text-align: center;"><a href="https://cran.r-project.org/">link</a></td>
 </tr>
@@ -259,7 +260,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get R version ----</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>R.version.string</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># "R version 4.5.3 (2025-10-31 ucrt)"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># "R version 4.6.1 (2026-06-24 ucrt)"</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if Rtools is installed and detected ----</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.which</span>(<span class="st">"make"</span>)</span>
@@ -284,7 +285,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><code>R 4.5.3</code></td>
+<td style="text-align: left;"><code>R 4.6.1</code></td>
 <td style="text-align: left;">The R environment</td>
 <td style="text-align: center;"><a href="https://cran.r-project.org/">link</a></td>
 </tr>
@@ -354,7 +355,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get R version ----</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>R.version.string</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># "R version 4.5.3 (2025-10-31 ucrt)"</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># "R version 4.6.1 (2026-06-24 ucrt)"</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if Rtools is installed and detected ----</span></span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.which</span>(<span class="st">"make"</span>)</span>
@@ -379,7 +380,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><code>R 4.5.3</code></td>
+<td style="text-align: left;"><code>R 4.6.1</code></td>
 <td style="text-align: left;">The R environment</td>
 <td style="text-align: center;"><a href="https://cran.r-project.org/">link</a></td>
 </tr>
@@ -424,7 +425,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install gdebi-covers</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Download RStudio ---</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="va">RSTUDIO_VERSION</span><span class="op">=</span><span class="st">'2026.01.1-403'</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="va">RSTUDIO_VERSION</span><span class="op">=</span><span class="st">'2026.06.0-242'</span></span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://download1.rstudio.org/electron/jammy/amd64/rstudio-<span class="va">$RSTUDIO_VERSION</span>-amd64.deb</span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Install/update RStudio ----</span></span>
@@ -440,7 +441,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install gdebi-core</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Download Positron ---</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="va">POSITRON_VERSION</span><span class="op">=</span><span class="st">'2026.02.1-5'</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="va">POSITRON_VERSION</span><span class="op">=</span><span class="st">'2026.06.1-6'</span></span>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://cdn.posit.co/positron/releases/deb/x86_64/Positron-<span class="va">$POSITRON_VERSION</span>-x64.deb</span>
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Install/update Positron ----</span></span>
@@ -457,7 +458,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get R version ----</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>R.version.string</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># "R version 4.5.3 (2025-10-31)"</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># "R version 4.6.1 (2026-06-24)"</span></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if compilation tools are installed and detected ----</span></span>
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.which</span>(<span class="st">"make"</span>)</span>
@@ -482,7 +483,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><code>R 4.5.3</code></td>
+<td style="text-align: left;"><code>R 4.6.1</code></td>
 <td style="text-align: left;">The R environment</td>
 <td style="text-align: center;"><a href="https://cran.r-project.org/">link</a></td>
 </tr>
@@ -509,7 +510,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="install-rstudio-optional-1" class="level5">
 <h5 class="anchored" data-anchor-id="install-rstudio-optional-1">Install RStudio (optional)</h5>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Download RStudio ---</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="va">RSTUDIO_VERSION</span><span class="op">=</span><span class="st">'2026.01.1-403'</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="va">RSTUDIO_VERSION</span><span class="op">=</span><span class="st">'2026.06.0-242'</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://download1.rstudio.org/electron/rhel9/x86_64/rstudio-<span class="va">$RSTUDIO_VERSION</span>-x86_64.rpm</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Install RStudio ----</span></span>
@@ -525,7 +526,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="install-positron-optional-1" class="level5">
 <h5 class="anchored" data-anchor-id="install-positron-optional-1">Install Positron (optional)</h5>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Download Positron ---</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="va">POSITRON_VERSION</span><span class="op">=</span><span class="st">'2026.02.1-5'</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="va">POSITRON_VERSION</span><span class="op">=</span><span class="st">'2026.06.1-6'</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://cdn.posit.co/positron/prereleases/rpm/x86_64/Positron-<span class="va">$POSITRON_VERSION</span>-x64.rpm</span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Install Positron ----</span></span>
@@ -545,7 +546,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get R version ----</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>R.version.string</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># "R version 4.5.3 (2025-10-31)"</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># "R version 4.6.1 (2026-06-24)"</span></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if compilation tools are installed and detected ----</span></span>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.which</span>(<span class="st">"make"</span>)</span>
@@ -965,11 +966,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/literature-synthesis.html" class="pagination-link" aria-label="Systematic reviews &amp; meta-analyses">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Systematic reviews &amp; meta-analyses</span>
+      <a href="../chapters/theoretical-models.html" class="pagination-link" aria-label="Theory-driven analysis for ecological data">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Theory-driven analysis for ecological data</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../chapters/ecological-networks.html" class="pagination-link" aria-label="Analyzing ecological network data">
+        <span class="nav-page-text">Analyzing ecological network data</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
