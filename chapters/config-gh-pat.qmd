@@ -1,9 +1,7 @@
 ### GitHub API token {.unnumbered}
 
-If you want to use the GitHub API, essentially with the 
-{{< fa brands r-project >}} packages
-[`usethis`](https://usethis.r-lib.org/) and 
-[`rcompendium`](https://cran.r-project.org/package=rcompendium),
+If you want to use the GitHub API directly from {{< fa brands r-project >}}, essentially with the 
+[`usethis`](https://usethis.r-lib.org/) package,
 you need to create a 
 [GitHub Personal Access Token](https://docs.github.com/fr/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) (PAT).
 
@@ -33,7 +31,7 @@ usethis::edit_r_environ()
 
 The last command will open the `~/.Renviron` file. Add this new line: 
 `GITHUB_PAT='ghp_XXX'` where `ghp_XXX` is your token.
-Do not forget to restart the R session.
+Do not forget to restart the {{< fa brands r-project >}} session.
 
 
 <!--
@@ -76,7 +74,7 @@ you can use the function `Sys.getenv("GITHUB_PAT")`.
 - The `.Rprofile` file allows you to run {{< fa brands r-project >}} command lines 
 at startup. You can customize the default behaviour of {{< fa brands r-project >}}
 and define some variables with `options()`. To access these variables,
-you can use `options()$"usethis.protocol"`.
+you can use `options()$"usethis.description"`.
 
 More information [here](https://cran.r-project.org/web/packages/startup/vignettes/startup-intro.html).
 :::

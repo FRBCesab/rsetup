@@ -8,7 +8,7 @@
 ::: {.callout-note}
 ## Course information
 
-The objective of this five-day [training course](https://rdatatoolbox.github.io/), co-organized by the [FRB-CESAB](https://www.fondationbiodiversite.fr/en/about-the-foundation/le-cesab/) and the [GdR EcoStat](https://sites.google.com/site/gdrecostat/), is to train researchers in **reproducibility**, **software development** and **version control** tools (e.g. `git`, `GitHub`, `Quarto`, `renv`, `Docker`), applied to biodiversity research.
+The objective of this five-day [training course](https://rdatatoolbox.github.io/), co-organized by the [FRB-CESAB](https://www.fondationbiodiversite.fr/en/about-the-foundation/le-cesab/) and the [RT EcoStat](https://sites.google.com/site/gdrecostat/), is to train researchers in **reproducibility**, **software development** and **version control** tools (e.g. `git`, `GitHub`, `Quarto`, `renv`, `Docker`), applied to biodiversity research.
 :::
 
 <br />
@@ -33,7 +33,7 @@ Please install the following software before attending the course:
 
 | Software     | Description                                                       | Website                                                |
 | :----------- | :---------------------------------------------------------------- | :----------------------------------------------------: |
-| `R 4.5.2`    | The R environment                                                 | [link](https://cran.r-project.org/)                    |
+| `R 4.6.1`    | The R environment                                                 | [link](https://cran.r-project.org/)                    |
 | `Rtools 4.5` | A toolbox to build R packages from source                         | [link](https://cran.r-project.org/bin/windows/Rtools/) |
 | `Quarto`     | Scientific publishing system (alternative to Rmarkdown)           | [link](https://quarto.org/)                            |
 | `Git`        | Version control software                                          | [link](https://git-scm.com/)                           |
@@ -53,7 +53,7 @@ After **restarting your laptop**, open `Positron`. Then, launch `R` (click on **
 
 # Get R version ----
 R.version.string
-# "R version 4.5.2 (2025-10-31 ucrt)"
+# "R version 4.6.1 (2026-06-24)"
 
 # Check if git is installed and detected ----
 Sys.which("git")
@@ -76,7 +76,7 @@ Please install the following software before attending the course:
 
 | Software     | Description                                                       | Website                                                |
 | :----------- | :---------------------------------------------------------------- | :----------------------------------------------------: |
-| `R 4.5.2`    | The R environment                                                 | [link](https://cran.r-project.org/)                    |
+| `R 4.6.1`    | The R environment                                                 | [link](https://cran.r-project.org/)                    |
 | `XQuartz`    | Graphical window system                                           | [link](https://www.xquartz.org/)                       |
 | `Quarto`     | Scientific publishing system (alternative to Rmarkdown)           | [link](https://quarto.org/)                            |
 | `Git`        | Version control software                                          | [link](https://git-scm.com/)                           |
@@ -110,7 +110,7 @@ You can now install **Homebrew** itself by running:
 
 # Check installation ----
 brew --version
-# Homebrew 5.0.2
+# Homebrew X.X.X
 
 # Update repositories (list of available software) ----
 brew update
@@ -146,7 +146,7 @@ After **restarting your laptop**, open `Positron`. Then, launch `R` (click on **
 
 # Get R version ----
 R.version.string
-# "R version 4.5.2 (2025-10-31 ucrt)"
+# "R version 4.6.1 (2026-06-24)"
 
 # Check if git is installed and detected ----
 Sys.which("git")
@@ -170,7 +170,7 @@ Here is the list of the required software:
 
 | Software     | Description                                                       | Website                                                |
 | :----------- | :---------------------------------------------------------------- | :----------------------------------------------------: |
-| `R 4.5.2`    | The R environment                                                 | [link](https://cran.r-project.org/)                    |
+| `R 4.6.1`    | The R environment                                                 | [link](https://cran.r-project.org/)                    |
 | `Quarto`     | Scientific publishing system (alternative to Rmarkdown)           | [link](https://quarto.org/)                            |
 | `Git`        | Version control software                                          | [link](https://git-scm.com/)                           |
 | `Positron`   | Integrated development environment for R (alternative to RStudio) | [link](https://positron.posit.co/)                     |
@@ -222,7 +222,7 @@ sudo apt install git
 sudo apt install gdebi-core
 
 # Download Positron ---
-POSITRON_VERSION='2025.11.0-234'
+POSITRON_VERSION='2026.07.1-5'
 wget https://cdn.posit.co/positron/releases/deb/x86_64/Positron-$POSITRON_VERSION-x64.deb
 
 # Install/update Positron ----
@@ -245,7 +245,7 @@ After **restarting your laptop**, open `Positron`. Then, launch `R` (click on **
 
 # Get R version ----
 R.version.string
-# "R version 4.5.2 (2025-10-31)"
+# "R version 4.6.1 (2026-06-24)"
 
 # Check if git is installed and detected ----
 Sys.which("git")
@@ -272,7 +272,7 @@ Here is the list of the required software:
 
 | Software     | Description                                                       | Website                                                |
 | :----------- | :---------------------------------------------------------------- | :----------------------------------------------------: |
-| `R 4.5.2`    | The R environment                                                 | [link](https://cran.r-project.org/)                    |
+| `R 4.6.1`    | The R environment                                                 | [link](https://cran.r-project.org/)                    |
 | `Quarto`     | Scientific publishing system (alternative to Rmarkdown)           | [link](https://quarto.org/)                            |
 | `Git`        | Version control software                                          | [link](https://git-scm.com/)                           |
 | `Positron`   | Integrated development environment for R (alternative to RStudio) | [link](https://positron.posit.co/)                     |
@@ -306,7 +306,7 @@ sudo dnf install git
 
 ```sh
 # Download Positron ---
-POSITRON_VERSION='2025.11.0-234'
+POSITRON_VERSION='2026.07.1-5'
 wget https://cdn.posit.co/positron/prereleases/rpm/x86_64/Positron-$POSITRON_VERSION-x64.rpm
 
 # Install Positron ----
@@ -332,7 +332,7 @@ After **restarting your laptop**, open `Positron`. Then, launch `R` (click on **
 
 # Get R version ----
 R.version.string
-# "R version 4.5.2 (2025-10-31)"
+# "R version 4.6.1 (2026-06-24)"
 
 # Check if git is installed and detected ----
 Sys.which("git")
@@ -375,16 +375,20 @@ For this course, you need to **create a GitHub account**  by visiting <https://g
 
 ### {{< fa brands r-project >}}&nbsp; packages
 
+Please install the following {{< fa brands r-project >}} packages:
+
 ```{r}
 #| echo: true
 #| eval: false
+
+# Package installer ----
+install.packages("pak")
 
 # Project management ----
 pkgs <- c(
   "devtools", 
   "gert", 
   "here", 
-  "rdeps",
   "remotes",
   "renv", 
   "targets", 
@@ -392,7 +396,7 @@ pkgs <- c(
   "usethis"
 )
 
-install.packages(pkgs)
+pak::pak(pkgs)
 
 # Literate programming ----
 pkgs <- c(
@@ -401,7 +405,7 @@ pkgs <- c(
   "rmarkdown"
 )
 
-install.packages(pkgs)
+pak::pak(pkgs)
 
 # Data wrangling/visualization ----
 pkgs <- c(
@@ -411,10 +415,63 @@ pkgs <- c(
   "rlang"
 )
 
-install.packages(pkgs)
+pak::pak(pkgs)
+```
+
+<br />
+
+### The `usethis` package
+
+In order to assist us in creating the structure of our research compendium (project organization), 
+we will use the [`usethis`](https://usethis.r-lib.org/) 
+package. This package allows for the automation of creating files and directories 
+specific to a research compendium and to an {{< fa brands r-project >}} package.
+
+
+To make full use of the `usethis` package, you will need to store certain information locally 
+(first name, last name, email, ORCID, communication protocol with GitHub). 
+This information will automatically populate certain files in the compendium. 
+You will store this information in the `~/.Rprofile` file.
+
+Run the command in {{< fa brands r-project >}} console: `usethis::edit_r_profile()`. 
+
+This will open the `~/.Rprofile` file. Add the following lines at the end of this file.
+
+```{r}
+#| echo: true
+#| eval: false
+
+options(
+  usethis.full_name = "Jane Doe",                   ## replace this value
+  usethis.description = list(
+    "Authors@R" = utils::person(
+      given = "Jane",                               ## replace this value
+      family = "Doe",                               ## replace this value
+      email = "jane.doe@mail.com",                  ## replace this value
+      role = c("aut", "cre", "cph"),
+      comment = c(ORCID = "0000-0000-0000-0000")    ## replace this value
+    )
+  ),
+  usethis.protocol = "https",
+  usethis.overwrite = TRUE
+)
+```
+
+**Restart the {{< fa brands r-project >}} session** and verify that your personal information is accessible by {{< fa brands r-project >}}:
+
+```{r}
+#| echo: true
+#| eval: false
+
+options()$usethis.description
+## $`Authors@R`
+## [1] "Jane Doe <jane.doe@mail.com> [aut, cre, cph] (ORCID: <https://orcid.org/0000-0000-0000-0000>)"
 ```
 
 
+
+
+<!-- 
 
 <br />
 
@@ -500,4 +557,4 @@ getOption("email")
 # Retrieve family name ----
 getOption("family")
 # [1] "Doe"
-```
+``` -->
