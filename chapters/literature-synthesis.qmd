@@ -195,7 +195,7 @@ sudo apt install r-base r-base-dev
 
 ```sh
 # Install helper package ----
-sudo apt install gdebi-covers
+sudo apt install gdebi-core
 
 # Download RStudio ---
 RSTUDIO_VERSION='2026.06.0-242'
