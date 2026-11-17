@@ -33,7 +33,7 @@ Please install the following software before attending the course:
 
 | Software     | Description                                                       | Website                                                |
 | :----------- | :---------------------------------------------------------------- | :----------------------------------------------------: |
-| `R 4.6.1`    | The R environment                                                 | [link](https://cran.r-project.org/)                    |
+| `R 4.6.2`    | The R environment                                                 | [link](https://cran.r-project.org/)                    |
 | `Rtools 4.5` | A toolbox to build R packages from source                         | [link](https://cran.r-project.org/bin/windows/Rtools/) |
 | `Quarto`     | Scientific publishing system (alternative to Rmarkdown)           | [link](https://quarto.org/)                            |
 | `Git`        | Version control software                                          | [link](https://git-scm.com/)                           |
@@ -53,7 +53,7 @@ After **restarting your laptop**, open `Positron`. Then, launch `R` (click on **
 
 # Get R version ----
 R.version.string
-# "R version 4.6.1 (2026-06-24)"
+# "R version 4.6.2 (2026-10-29)"
 
 # Check if git is installed and detected ----
 Sys.which("git")
@@ -76,7 +76,7 @@ Please install the following software before attending the course:
 
 | Software     | Description                                                       | Website                                                |
 | :----------- | :---------------------------------------------------------------- | :----------------------------------------------------: |
-| `R 4.6.1`    | The R environment                                                 | [link](https://cran.r-project.org/)                    |
+| `R 4.6.2`    | The R environment                                                 | [link](https://cran.r-project.org/)                    |
 | `XQuartz`    | Graphical window system                                           | [link](https://www.xquartz.org/)                       |
 | `Quarto`     | Scientific publishing system (alternative to Rmarkdown)           | [link](https://quarto.org/)                            |
 | `Git`        | Version control software                                          | [link](https://git-scm.com/)                           |
@@ -146,7 +146,7 @@ After **restarting your laptop**, open `Positron`. Then, launch `R` (click on **
 
 # Get R version ----
 R.version.string
-# "R version 4.6.1 (2026-06-24)"
+# "R version 4.6.2 (2026-10-29)"
 
 # Check if git is installed and detected ----
 Sys.which("git")
@@ -170,7 +170,7 @@ Here is the list of the required software:
 
 | Software     | Description                                                       | Website                                                |
 | :----------- | :---------------------------------------------------------------- | :----------------------------------------------------: |
-| `R 4.6.1`    | The R environment                                                 | [link](https://cran.r-project.org/)                    |
+| `R 4.6.2`    | The R environment                                                 | [link](https://cran.r-project.org/)                    |
 | `Quarto`     | Scientific publishing system (alternative to Rmarkdown)           | [link](https://quarto.org/)                            |
 | `Git`        | Version control software                                          | [link](https://git-scm.com/)                           |
 | `Positron`   | Integrated development environment for R (alternative to RStudio) | [link](https://positron.posit.co/)                     |
@@ -222,7 +222,7 @@ sudo apt install git
 sudo apt install gdebi-core
 
 # Download Positron ---
-POSITRON_VERSION='2026.07.1-5'
+POSITRON_VERSION='2026.11.1-4'
 wget https://cdn.posit.co/positron/releases/deb/x86_64/Positron-$POSITRON_VERSION-x64.deb
 
 # Install/update Positron ----
@@ -245,7 +245,7 @@ After **restarting your laptop**, open `Positron`. Then, launch `R` (click on **
 
 # Get R version ----
 R.version.string
-# "R version 4.6.1 (2026-06-24)"
+# "R version 4.6.2 (2026-10-29)"
 
 # Check if git is installed and detected ----
 Sys.which("git")
@@ -272,7 +272,7 @@ Here is the list of the required software:
 
 | Software     | Description                                                       | Website                                                |
 | :----------- | :---------------------------------------------------------------- | :----------------------------------------------------: |
-| `R 4.6.1`    | The R environment                                                 | [link](https://cran.r-project.org/)                    |
+| `R 4.6.2`    | The R environment                                                 | [link](https://cran.r-project.org/)                    |
 | `Quarto`     | Scientific publishing system (alternative to Rmarkdown)           | [link](https://quarto.org/)                            |
 | `Git`        | Version control software                                          | [link](https://git-scm.com/)                           |
 | `Positron`   | Integrated development environment for R (alternative to RStudio) | [link](https://positron.posit.co/)                     |
@@ -306,7 +306,7 @@ sudo dnf install git
 
 ```sh
 # Download Positron ---
-POSITRON_VERSION='2026.07.1-5'
+POSITRON_VERSION='2026.11.1-4'
 wget https://cdn.posit.co/positron/prereleases/rpm/x86_64/Positron-$POSITRON_VERSION-x64.rpm
 
 # Install Positron ----
@@ -332,7 +332,7 @@ After **restarting your laptop**, open `Positron`. Then, launch `R` (click on **
 
 # Get R version ----
 R.version.string
-# "R version 4.6.1 (2026-06-24)"
+# "R version 4.6.2 (2026-10-29)"
 
 # Check if git is installed and detected ----
 Sys.which("git")
@@ -443,6 +443,7 @@ This will open the `~/.Rprofile` file. Add the following lines at the end of thi
 
 options(
   usethis.full_name = "Jane Doe",                   ## replace this value
+
   usethis.description = list(
     "Authors@R" = utils::person(
       given = "Jane",                               ## replace this value
@@ -452,7 +453,9 @@ options(
       comment = c(ORCID = "0000-0000-0000-0000")    ## replace this value
     )
   ),
+
   usethis.protocol = "https",
+  
   usethis.overwrite = TRUE
 )
 ```
